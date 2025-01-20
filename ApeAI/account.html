@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>ApeAI</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./css/null.css" />
+      <link rel="stylesheet" href="./css/account.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/app/bg.png" alt="" class="bg" />
+         <div class="content _container">
+            <div class="header">
+               <img src="./image/app/logo.png" alt="" class="logo" />
+               <div class="header__buttons">
+                  <a href="#" class="_scale_hover login">Login</a>
+                  <a href="#" class="_scale_hover sign">
+                     <img src="./image/app/sign.png" alt="" />
+                  </a>
+               </div>
+            </div>
+            <section class="account">
+               <div class="left">
+                  <div class="header__menu menu">
+                     <div class="menu__icon">
+                        <span></span>
+                     </div>
+                     <nav class="menu__body">
+                        <ul class="menu__list">
+                           <li>
+                              <a href="./security.html" class="menu__link">
+                                 <img src="./image/app/security.svg" alt="" />
+                                 Security</a
+                              >
+                           </li>
+                           <li class="menu__item">
+                              <a href="#" class="menu__link">
+                                 <img src="./image/app/tools.svg" alt="" />
+                                 Tools
+                                 <img src="./image/app/open.svg" class="menu__arrow" alt="" />
+                              </a>
+                              <ul class="menu__sub-list">
+                                 <li>
+                                    <a href="#" class="menu__sub-link">
+                                       <img src="./image/app/dot.svg" alt="" /> Code Explain
+                                       <span class="menu__status">Will be soon</span>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#" class="menu__sub-link">
+                                       <img src="./image/app/dot.svg" alt="" /> Your Own Alpha
+                                       <span class="menu__status">Will be soon</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </li>
+
+                           <li>
+                              <a href="#" class="menu__link active">
+                                 <img src="./image/app/account.svg" alt="" />
+                                 Account</a
+                              >
+                           </li>
+                           <li>
+                              <a href="#" class="menu__link">
+                                 <img src="./image/app/developers.svg" alt="" />
+                                 Developers</a
+                              >
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+               <div class="right__column">
+                  <div class="personal">
+                     <p class="personal__text">Personal information</p>
+                     <div class="avatar">
+                        <img src="./image/app/avatar.svg" alt="" class="" />
+                        <button class="edit _scale_hover">Edit profile</button>
+                     </div>
+                     <div class="personal__info">
+                        <div class="username">
+                           <label for="username">Username:</label>
+                           <input placeholder="Enter new username" id="username" type="text" />
+                        </div>
+                        <div class="method">
+                           <label for="method">Connected Method:</label>
+                           <input placeholder="Text" id="method" type="text" />
+                        </div>
+                        <div class="email">
+                           <label for="email">Email:</label>
+                           <input placeholder="****" id="email" type="email" />
+                        </div>
+                        <div class="telegram">
+                           <label for="telegram">Telegram:</label>
+                           <input placeholder="Text" id="telegram" type="text" />
+                        </div>
+                        <div class="twitter">
+                           <label for="twitter">Twitter:</label>
+                           <input placeholder="Link" id="twitter" type="text" />
+                        </div>
+                        <div class="discord">
+                           <label for="discord">Discord:</label>
+                           <input placeholder="Text" id="discord" type="text" />
+                        </div>
+                     </div>
+                     <div class="cookie _scale_hover">Cookie Prefences</div>
+                  </div>
+                  <div class="right__right">
+                     <div class="wallet">
+                        <p class="personal__text">Wallet Management</p>
+                        <div class="personal__info">
+                           <div class="wallet__field">
+                              <label for="wallet">External Wallet:</label>
+                              <p data-copy class="wallet__value">
+                                 ****
+                                 <img src="./image/app/copy.svg" alt="" />
+                              </p>
+                           </div>
+                           <div class="method">
+                              <label for="method">Wallet linked to your Social profile</label>
+                              <img src="./image/app/yes.svg" alt="" class="yes" />
+                           </div>
+                           <div class="social">
+                              <label for="social">Link your wallet to Social profile</label>
+                              <input placeholder="Text" id="social" type="email" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="access">
+                        <p class="personal__text">Access & Subscriptions</p>
+                        <div class="personal__info">
+                           <div class="subscription">
+                              <label for="username">Tier:</label>
+                              <p class="subscription__text">BASIC</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <script src="./js/animation.js"></script>
+      <script src="./js/menu.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./js/copy.js"></script>
+   </body>
+</html>

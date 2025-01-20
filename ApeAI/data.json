@@ -1,0 +1,162 @@
+{
+  "token_data": {
+    "indicator_data": {
+      "high": {
+        "count": 5,
+        "details": [
+          {
+            "text": "Previous scams by owner's wallet found",
+            "is_scam": true
+          },
+          {
+            "text": "Mintable risks found",
+            "is_scam": false
+          },
+          {
+            "text": "Freeze risks found",
+            "is_scam": true
+          },
+          {
+            "text": "Token transferability risks found",
+            "is_scam": true
+          },
+          {
+            "text": "A private wallet owns a significant share of the supply",
+            "is_scam": false
+          },
+          {
+            "text": "Tokens auto-freeze risks found",
+            "is_scam": true
+          },
+          {
+            "text": "Significant ownership by top 10 wallets",
+            "is_scam": false
+          },
+          {
+            "text": "Significant ownership by top 20 wallets",
+            "is_scam": false
+          },
+          {
+            "text": "Permanent control risks found",
+            "is_scam": true
+          },
+          {
+            "text": "Presence of token metadata",
+            "is_scam": true
+          },
+          {
+            "text": "High locked supply risks found",
+            "is_scam": false
+          },
+          {
+            "text": "Sufficient liquidity detected",
+            "is_scam": true
+          },
+          {
+            "text": "Very low liquidity",
+            "is_scam": true
+          }
+        ]
+      },
+      "moderate": {
+        "count": 1,
+        "details": [
+          {
+            "text": "Token metadata are immutable",
+            "is_scam": false
+          },
+          {
+            "text": "Token operates without custom fees",
+            "is_scam": true
+          },
+          {
+            "text": "Token has recent user activity",
+            "is_scam": true
+          },
+          {
+            "text": "Unknown liquidity pools",
+            "is_scam": true
+          },
+          {
+            "text": "Low count of LP providers",
+            "is_scam": true
+          }
+        ]
+      },
+      "low": {
+        "count": 0,
+        "details": [
+          {
+            "text": "Contract was not recently deployed",
+            "is_scam": true
+          }
+        ]
+      },
+      "specific": {
+        "count": 0,
+        "details": [
+          {
+            "text": "Recent interaction within the last 30 days",
+            "is_scam": true
+          }
+        ]
+      }
+    },
+    "token_overview": {
+      "deployer": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+      "mint": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+      "address": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+      "type": "spl-token"
+    },
+    "token_name": "Wrapped Ethereum (Sollet)",
+    "token_symbol": "ETH",
+    "token_img": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk/logo.png",
+    "address": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+    "score": 65,
+    "deploy_time": "2023-01-01T00:00:00Z",
+    "market_cap": 247268964.57,
+    "externals": {
+      "website": "https://www.ethereum.org/",
+      "coingecko_coin_id": "wrapped-ethereum-sollet",
+      "discord_url": "https://discord.com/invite/CetY6Y4",
+      "twitter_handle": "ethereum"
+    },
+    "liquidity_list": [
+      {
+        "orca": {
+          "address": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+          "amount": 55306.72,
+          "lp_pair": "SOL"
+        },
+        "raydiun": {
+          "address": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+          "amount": 55306.72,
+          "lp_pair": "SOL"
+        },
+        "fluxbeam": {
+          "address": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+          "amount": 55306.72,
+          "lp_pair": "SOL"
+        }
+      }
+    ],
+    "owners_list": [
+      {
+        "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
+        "amount": 108.54,
+        "percentage": "0.02"
+      }
+    ],
+    "audit_risk": {
+      "mint_disabled": false,
+      "freeze_disabled": true,
+      "lp_burned": false,
+      "top10holders": false
+    }
+  },
+  "token_info": {
+    "price": 1.23,
+    "supply_amount": 1000000.0,
+    "mkt_cap": 1230000.0
+  }
+}

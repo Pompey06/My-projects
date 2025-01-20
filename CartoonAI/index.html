@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cartoon AI</title>
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="stylesheet" href="./popup.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+      <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet" />
+   </head>
+
+   <body>
+      <div class="wrapper">
+         <div id="chat" class="popup">
+            <div class="popup__body">
+               <div class="popup__content">
+                  <a data-close-popup href="#" class="popup__close flex-center">
+                     <img src="./image/close.svg" alt="close" />
+                  </a>
+                  <div class="modal__content">
+                     <img src="./image/modal-icon.svg" alt="modal-icon" class="modal-icon" />
+                     <form action="#" class="modal__form">
+                        <img src="./image/modal-upload.svg" alt="modal-upload" class="modal-upload hide-1200" />
+                        <div class="message-field-wrap">
+                           <img src="./image/modal-upload.svg" alt="modal-upload" class="modal-upload show-1200" />
+                           <textarea
+                              name="message"
+                              placeholder="A young couple went on a romantic walk in the park"
+                           ></textarea>
+                           <img src="./image/send-icon.svg" alt="" class="send-icon" />
+                        </div>
+                        <input type="file" name="file" class="file" />
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <section class="first bg__wrap">
+            <img src="./image/cloud-1.svg" class="cloud cloud-1" />
+            <img src="./image/cloud-1.svg" class="cloud cloud-3" />
+            <img src="./image/cloud-3.svg" class="cloud cloud-2" />
+            <!--<img src="./image/first__grass.png" class="grass" alt="" />-->
+            <img src="./image/first__bg.png" alt="first__bg" class="first__bg hide-1100" />
+            <img src="./image/first__bg_mobile.png" alt="first__bg_mobile" class="first__bg show-1100" />
+            <div class="networks first__networks">
+               <a href="Orel" class="_scale_hover">
+                  <img src="./image/dex.svg" alt="dex" />
+                  <span>Dex Screener</span>
+               </a>
+               <a href="Tools" class="_scale_hover">
+                  <img src="./image/Tools.svg" alt="Tools" />
+                  <span>Dex Tools</span>
+               </a>
+               <a href="Twitter" class="_scale_hover">
+                  <img src="./image/twitter.svg" alt="Twitter" />
+                  <span>Twitter</span>
+               </a>
+               <a href="Telegram" class="_scale_hover">
+                  <img src="./image/telegram.svg" alt="telegram" />
+                  <span>Telegram</span>
+               </a>
+            </div>
+            <div class="first__content" data-anim-on-scroll>
+               <p class="first-text hide-1100">
+                  A young couple went on a<br />
+                  romantic walk in the park
+               </p>
+               <h1 class="first__title">Cartoon AI</h1>
+               <p class="first-text show-1100">
+                  A young couple went on a<br />
+                  romantic walk in the park
+               </p>
+               <a href="Telegram" class="first__btn _scale_hover" data-open-popup="chat">
+                  <img src="./image/telegram-btn.svg" alt="" />
+               </a>
+            </div>
+            <img
+               data-anim-on-scroll
+               data-delay="0.4"
+               src="./image/first-rabbit.png"
+               alt=""
+               class="first-rabbit _bottom_anim"
+            />
+            <img
+               data-anim-on-scroll
+               data-delay="0.2"
+               src="./image/second-rabbit.png"
+               alt=""
+               class="second-rabbit _bottom_anim"
+            />
+            <img
+               data-anim-on-scroll
+               data-delay="0.6"
+               src="./image/third-rabbit.png"
+               alt=""
+               class="third-rabbit _bottom_anim"
+            />
+
+            <!--<img
+               data-anim-on-scroll
+               data-delay="0.4"
+               src="./image/first__hares.png"
+               da
+               alt="first__hares"
+               class="_bottom_anim first__hares hide-1100"
+            />
+            <img src="./image/first__hares_mobile.png" alt="first__hares_mobile" class="first__hares show-1100" />-->
+         </section>
+         <section class="second bg__wrap">
+            <img src="./image/second__bg.png" alt="second__bg" class="bg hide-820" />
+            <img src="./image/second__bg_mobile.png" alt="second__bg_mobile" class="bg show-820" />
+            <div class="_container">
+               <div class="second__items">
+                  <div class="second__item _bottom_anim" data-anim-on-scroll data-delay="0.3">
+                     <img src="./image/second__item-1.png" alt="second__item-1" />
+                     <img
+                        src="./image/second__item_image-1.png"
+                        alt="second__item_image-1"
+                        class="second__item_image"
+                     />
+                     <div class="second__item_texts">
+                        <h3>Dex Screener</h3>
+                        <p>A young couple went on a romantic walk in the park</p>
+                     </div>
+                  </div>
+                  <div class="second__item _bottom_anim" data-anim-on-scroll data-delay="0.5">
+                     <img src="./image/second__item-3.png" alt="second__item-2" />
+                     <img
+                        src="./image/second__item_image-2.png"
+                        alt="second__item_image-2"
+                        class="second__item_image second__item_image-2"
+                     />
+                     <div class="second__item_texts">
+                        <h3>Dex Screener</h3>
+                        <p>A young couple went on a romantic walk in the park</p>
+                     </div>
+                  </div>
+                  <div class="second__item _bottom_anim" data-anim-on-scroll data-delay="0.9">
+                     <img src="./image/second__item-2.png" alt="second__item-3" />
+                     <img
+                        src="./image/second__item_image-3.png"
+                        alt="second__item_image-3"
+                        class="second__item_image second__item_image_3"
+                     />
+                     <div class="second__item_texts">
+                        <h3>Dex Screener</h3>
+                        <p>A young couple went on a romantic walk in the park</p>
+                     </div>
+                  </div>
+               </div>
+               <a href="Dex" class="dex-btn _scale_hover">
+                  <img src="./image/dex-btn.svg" alt="dex-btn" />
+               </a>
+
+               <div class="second__bottom">
+                  <img
+                     src="./image/second__bottom__bg.png"
+                     alt="second__bottom__bg"
+                     class="second__bottom__bg hide-820"
+                  />
+                  <img
+                     src="./image/second__bottom__bg_1.png"
+                     alt="second__bottom__bg_1"
+                     class="second__bottom__bg show-820"
+                  />
+                  <div class="second__bottom_content">
+                     <h2 class="second__bottom_title">Cartoon AI</h2>
+                     <div class="second__images">
+                        <img
+                           src="./image/second__image-1.svg"
+                           alt="second__image-1"
+                           class="_bottom_anim"
+                           data-anim-on-scroll
+                           data-delay="0.2"
+                        />
+                        <img
+                           src="./image/second__image-2.svg"
+                           alt="second__image-2"
+                           class="_bottom_anim"
+                           data-anim-on-scroll
+                           data-delay="0.4"
+                        />
+                        <img
+                           src="./image/second__image-3.svg"
+                           alt="second__image-3"
+                           class="_bottom_anim"
+                           data-anim-on-scroll
+                           data-delay="0.8"
+                        />
+                     </div>
+                     <h3 class="images__title">A young</h3>
+                     <p class="images__text">
+                        A young couple went on a romantic walk in the park A young couple went on a romantic walk in the
+                        park A young couple went on a romantic walk in the park
+                     </p>
+                     <div class="second__images">
+                        <img
+                           src="./image/second__image-1.svg"
+                           alt="second__image-1"
+                           class="_bottom_anim"
+                           data-anim-on-scroll
+                           data-delay="0.2"
+                        />
+                        <img
+                           src="./image/second__image-2.svg"
+                           alt="second__image-2"
+                           class="_bottom_anim"
+                           data-anim-on-scroll
+                           data-delay="0.4"
+                        />
+                        <img
+                           src="./image/second__image-3.svg"
+                           alt="second__image-3"
+                           class="_bottom_anim"
+                           data-anim-on-scroll
+                           data-delay="0.8"
+                        />
+                     </div>
+                     <h3 class="images__title">A young</h3>
+                     <p class="images__text">
+                        A young couple went on a romantic walk in the park A young couple went on a romantic walk in the
+                        park A young couple went on a romantic walk in the park
+                     </p>
+                  </div>
+               </div>
+               <div class="networks second__networks">
+                  <a href="Orel" class="_scale_hover">
+                     <img src="./image/dex.svg" alt="dex" />
+                     <span>Dex Screener</span>
+                  </a>
+                  <a href="Tools" class="_scale_hover">
+                     <img src="./image/Tools.svg" alt="Tools" />
+                     <span>Dex Tools</span>
+                  </a>
+                  <a href="Twitter" class="_scale_hover">
+                     <img src="./image/twitter.svg" alt="Twitter" />
+                     <span>Twitter</span>
+                  </a>
+                  <a href="Telegram" class="_scale_hover">
+                     <img src="./image/telegram.svg" alt="telegram" />
+                     <span>Telegram</span>
+                  </a>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <!-- <div class="loop-images">
+    <div class="left">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+    <div class="right">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+  </div> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+      <script src="./animation.js"></script>
+      <script src="./popup.js"></script>
+      <script src="./script.js"></script>
+   </body>
+</html>
