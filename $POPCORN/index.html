@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>$POPCORN</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/bg.png" alt="" class="bg hide-768" />
+         <img src="./image/bgmb.png" alt="" class="bg show-768" />
+
+         <div class="content _container">
+            <div class="networks">
+               <a href="#" class="_scale_hover">
+                  <img src="./image/tg.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/x.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/screen.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/tools.svg" alt="" />
+               </a>
+            </div>
+            <img src="./image/title.png" alt="" class="title" />
+            <img src="./image/click.png" alt="" class="click" />
+            <a href="#" class="buy _scale_hover">
+               <img src="./image/buy.png" alt="" />
+            </a>
+            <div data-copy class="ca">0X000000000000000000</div>
+            <section class="about">
+               <img src="./image/about.png" alt="" class="about__title" />
+               <p class="about__text">
+                  January 22nd is a celebration of one of the world's most popular treats – popcorn! This day is not
+                  only about enjoying a delicious snack but also about honoring the culture that has formed around it:
+                  movies, fun evenings with friends, and family gatherings.
+               </p>
+               <p class="about__text">
+                  Popcorn has become a symbol of joy, simplicity, and togetherness. And January 22nd is the perfect
+                  opportunity to celebrate this special treat with a fresh perspective on traditions.
+               </p>
+            </section>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+      <!--
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+            const clickElement = document.querySelector(".click");
+            const popcorns = [];
+            const gravity = 0.5;
+            const bounceFactor = 0.7;
+
+            let isMouseDown = false; // Track if the left mouse button is pressed
+            let mouseX = 0;
+            let mouseY = 0;
+
+            // Create a popcorn element
+            function createPopcorn(x, y) {
+               const popcorn = document.createElement("div");
+               popcorn.classList.add("popcorn");
+               popcorn.style.left = `${x}px`;
+               popcorn.style.top = `${y + window.scrollY}px`; // Adjust for scroll position
+               popcorn.style.position = "absolute"; // Use absolute positioning
+
+               document.body.appendChild(popcorn);
+
+               const velocity = {
+                  x: (Math.random() - 0.5) * 10,
+                  y: Math.random() * -10 - 5,
+               };
+
+               popcorns.push({ element: popcorn, velocity });
+            }
+
+            // Handle click event
+            clickElement.addEventListener("click", (e) => {
+               const rect = clickElement.getBoundingClientRect();
+               const x = rect.left + rect.width / 2;
+               const y = rect.top;
+
+               createPopcorn(x, y);
+            });
+
+            // Check for collisions between two popcorns
+            function checkCollision(popcornA, popcornB) {
+               const rectA = popcornA.element.getBoundingClientRect();
+               const rectB = popcornB.element.getBoundingClientRect();
+
+               return !(
+                  rectA.right < rectB.left ||
+                  rectA.left > rectB.right ||
+                  rectA.bottom < rectB.top ||
+                  rectA.top > rectB.bottom
+               );
+            }
+
+            // Resolve collision between two popcorns
+            function resolveCollision(popcornA, popcornB) {
+               const rectA = popcornA.element.getBoundingClientRect();
+               const rectB = popcornB.element.getBoundingClientRect();
+
+               // Calculate overlap
+               const overlapX = Math.min(rectA.right, rectB.right) - Math.max(rectA.left, rectB.left);
+               const overlapY = Math.min(rectA.bottom, rectB.bottom) - Math.max(rectA.top, rectB.top);
+
+               // Push them apart based on the smaller overlap
+               if (overlapX < overlapY) {
+                  if (rectA.left < rectB.left) {
+                     popcornA.velocity.x = -Math.abs(popcornA.velocity.x);
+                     popcornB.velocity.x = Math.abs(popcornB.velocity.x);
+                  } else {
+                     popcornA.velocity.x = Math.abs(popcornA.velocity.x);
+                     popcornB.velocity.x = -Math.abs(popcornB.velocity.x);
+                  }
+               } else {
+                  if (rectA.top < rectB.top) {
+                     popcornA.velocity.y = -Math.abs(popcornA.velocity.y);
+                     popcornB.velocity.y = Math.abs(popcornB.velocity.y);
+                  } else {
+                     popcornA.velocity.y = Math.abs(popcornA.velocity.y);
+                     popcornB.velocity.y = -Math.abs(popcornB.velocity.y);
+                  }
+               }
+            }
+
+            // Update popcorn positions
+            function updatePopcorns() {
+               popcorns.forEach((popcornObj, index) => {
+                  const { element, velocity } = popcornObj;
+
+                  // Get current position
+                  let currentX = parseFloat(element.style.left);
+                  let currentY = parseFloat(element.style.top) - window.scrollY; // Adjust for scroll position
+
+                  // Update velocity
+                  velocity.y += gravity;
+
+                  // Update position
+                  let newX = currentX + velocity.x;
+                  let newY = currentY + velocity.y;
+
+                  // Check for collisions with screen edges
+                  if (newX <= 0 || newX + element.offsetWidth >= window.innerWidth) {
+                     velocity.x *= -bounceFactor;
+                     newX = Math.max(0, Math.min(newX, window.innerWidth - element.offsetWidth));
+                  }
+
+                  if (newY + element.offsetHeight >= window.innerHeight) {
+                     velocity.y *= -bounceFactor;
+                     newY = window.innerHeight - element.offsetHeight;
+
+                     // Stop bouncing if velocity is very low
+                     if (Math.abs(velocity.y) < 1) {
+                        velocity.y = 0;
+                     }
+                  }
+
+                  // Apply new position (adjust for scroll)
+                  element.style.left = `${newX}px`;
+                  element.style.top = `${newY + window.scrollY}px`;
+
+                  // Check for collisions with other popcorns
+                  for (let i = 0; i < popcorns.length; i++) {
+                     if (i !== index) {
+                        const otherPopcorn = popcorns[i];
+                        if (checkCollision(popcornObj, otherPopcorn)) {
+                           resolveCollision(popcornObj, otherPopcorn);
+                        }
+                     }
+                  }
+
+                  // Handle mouse interaction when pressed
+                  if (isMouseDown) {
+                     const dx = currentX + element.offsetWidth / 2 - mouseX;
+                     const dy = currentY + element.offsetHeight / 2 - mouseY;
+                     const distance = Math.sqrt(dx * dx + dy * dy);
+
+                     if (distance < 100) {
+                        const force = (100 - distance) / 10;
+                        velocity.x += (dx / distance) * force;
+                        velocity.y += (dy / distance) * force;
+                     }
+                  }
+               });
+            }
+
+            // Mouse interaction
+            document.addEventListener("mousedown", (e) => {
+               if (e.button === 0) {
+                  // Check if left mouse button is pressed
+                  isMouseDown = true;
+               }
+            });
+
+            document.addEventListener("mouseup", () => {
+               isMouseDown = false;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+               mouseX = e.clientX;
+               mouseY = e.clientY;
+            });
+
+            // Animation loop
+            function animate() {
+               updatePopcorns();
+               requestAnimationFrame(animate);
+            }
+
+            animate();
+         });
+      </script>-->
+      <!--<script>
+         document.addEventListener("DOMContentLoaded", () => {
+            const clickElement = document.querySelector(".click");
+            const popcorns = [];
+            const gravity = 0.5;
+
+            let isMouseDown = false; // Track if the left mouse button is pressed
+            let mouseX = 0;
+            let mouseY = 0;
+
+            // Массив с классами или путями к картинкам
+            const popcornImages = ["popcorn1", "popcorn2", "popcorn3", "popcorn4"];
+
+            // Create a popcorn element
+            function createPopcorn(x, y) {
+               const popcorn = document.createElement("div");
+
+               // Случайно выбираем класс для попкорна
+               const randomImage = popcornImages[Math.floor(Math.random() * popcornImages.length)];
+               popcorn.classList.add("popcorn", randomImage);
+
+               popcorn.style.left = `${x}px`;
+               popcorn.style.top = `${y + window.scrollY}px`; // Учитываем текущий скролл при создании
+               popcorn.style.position = "absolute"; // Use absolute positioning
+
+               document.body.appendChild(popcorn);
+
+               const velocity = {
+                  x: (Math.random() - 0.5) * 10,
+                  y: Math.random() * -10 - 5,
+               };
+
+               popcorns.push({ element: popcorn, velocity, isAtRest: false, lastScrollY: window.scrollY });
+            }
+
+            // Handle click event
+            clickElement.addEventListener("click", (e) => {
+               const rect = clickElement.getBoundingClientRect();
+               const x = rect.left + rect.width / 2;
+               const y = rect.top;
+
+               // Создаем 2-3 попкорна за одно нажатие
+               const popcornCount = Math.floor(Math.random() * 2) + 2; // Случайное число от 2 до 3
+               for (let i = 0; i < popcornCount; i++) {
+                  createPopcorn(x, y);
+               }
+            });
+
+            // Check for collisions between two popcorns
+            function checkCollision(popcornA, popcornB) {
+               const rectA = popcornA.element.getBoundingClientRect();
+               const rectB = popcornB.element.getBoundingClientRect();
+
+               return !(
+                  rectA.right < rectB.left ||
+                  rectA.left > rectB.right ||
+                  rectA.bottom < rectB.top ||
+                  rectA.top > rectB.bottom
+               );
+            }
+
+            // Resolve collision by adjusting positions
+            function resolveCollision(popcornA, popcornB) {
+               const rectA = popcornA.element.getBoundingClientRect();
+               const rectB = popcornB.element.getBoundingClientRect();
+
+               const overlapX = Math.min(rectA.right - rectB.left, rectB.right - rectA.left);
+               const overlapY = Math.min(rectA.bottom - rectB.top, rectB.bottom - rectA.top);
+
+               if (overlapX < overlapY) {
+                  // Horizontal collision
+                  if (rectA.left < rectB.left) {
+                     popcornA.velocity.x = -Math.abs(popcornA.velocity.x);
+                     popcornB.velocity.x = Math.abs(popcornB.velocity.x);
+                  } else {
+                     popcornA.velocity.x = Math.abs(popcornA.velocity.x);
+                     popcornB.velocity.x = -Math.abs(popcornB.velocity.x);
+                  }
+               } else {
+                  // Vertical collision
+                  if (rectA.top < rectB.top) {
+                     popcornA.velocity.y = -Math.abs(popcornA.velocity.y);
+                     popcornB.velocity.y = Math.abs(popcornB.velocity.y);
+                  } else {
+                     popcornA.velocity.y = Math.abs(popcornA.velocity.y);
+                     popcornB.velocity.y = -Math.abs(popcornB.velocity.y);
+                  }
+               }
+            }
+
+            // Update popcorn positions
+            function updatePopcorns() {
+               const currentScrollY = window.scrollY;
+
+               popcorns.forEach((popcornObj, index) => {
+                  const { element, velocity } = popcornObj;
+
+                  // Skip updating if the popcorn is at rest and the mouse is not pressed
+                  if (popcornObj.isAtRest && !isMouseDown) return;
+
+                  // Get current position
+                  let currentX = parseFloat(element.style.left);
+                  let currentY = parseFloat(element.style.top);
+
+                  // Adjust for scroll changes
+                  const scrollDelta = currentScrollY - popcornObj.lastScrollY;
+                  currentY += scrollDelta; // Adjust position based on scroll delta
+                  popcornObj.lastScrollY = currentScrollY; // Update last scroll position
+
+                  // Update velocity
+                  if (!popcornObj.isAtRest) {
+                     velocity.y += gravity;
+                  }
+
+                  // Update position
+                  let newX = currentX + velocity.x;
+                  let newY = currentY + velocity.y;
+
+                  // Check for collisions with screen edges
+                  if (newX <= 0 || newX + element.offsetWidth >= window.innerWidth) {
+                     velocity.x *= -0.8; // Reverse and reduce horizontal velocity
+                     newX = Math.max(0, Math.min(newX, window.innerWidth - element.offsetWidth));
+                  }
+
+                  if (newY + element.offsetHeight >= window.innerHeight + currentScrollY) {
+                     velocity.y *= -0.8; // Reverse and reduce vertical velocity
+                     newY = window.innerHeight + currentScrollY - element.offsetHeight;
+                     popcornObj.isAtRest = Math.abs(velocity.y) < 1; // Mark as at rest if velocity is low
+                  }
+
+                  // Apply new position
+                  element.style.left = `${newX}px`;
+                  element.style.top = `${newY}px`;
+
+                  // Check for collisions with other popcorns
+                  for (let i = 0; i < popcorns.length; i++) {
+                     if (i !== index) {
+                        const otherPopcorn = popcorns[i];
+                        if (checkCollision(popcornObj, otherPopcorn)) {
+                           resolveCollision(popcornObj, otherPopcorn);
+                        }
+                     }
+                  }
+
+                  // Handle mouse interaction when pressed
+                  if (isMouseDown) {
+                     const dx = currentX + element.offsetWidth / 2 - mouseX;
+                     const dy = currentY + element.offsetHeight / 2 - mouseY;
+                     const distance = Math.sqrt(dx * dx + dy * dy);
+
+                     if (distance < 100) {
+                        const force = (100 - distance) / 10;
+                        velocity.x += (dx / distance) * force;
+                        velocity.y += (dy / distance) * force;
+                        popcornObj.isAtRest = false; // Allow movement again
+                     }
+                  }
+               });
+            }
+
+            // Mouse interaction
+            document.addEventListener("mousedown", (e) => {
+               if (e.button === 0) {
+                  // Check if left mouse button is pressed
+                  isMouseDown = true;
+               }
+            });
+
+            document.addEventListener("mouseup", () => {
+               isMouseDown = false;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+               mouseX = e.clientX;
+               mouseY = e.clientY;
+            });
+
+            // Animation loop
+            function animate() {
+               updatePopcorns();
+               requestAnimationFrame(animate);
+            }
+
+            animate();
+         });
+      </script>-->
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+            const clickElement = document.querySelector(".click");
+            const popcorns = [];
+            const gravity = 0.5;
+            const bounceFactor = 0.7;
+
+            let isMouseDown = false; // Track if the left mouse button is pressed
+            let mouseX = 0;
+            let mouseY = 0;
+
+            // Массив с классами для разных попкорнов
+            const popcornClasses = ["popcorn1", "popcorn2", "popcorn3", "popcorn4"];
+
+            // Create a popcorn element
+            function createPopcorn(x, y) {
+               const popcorn = document.createElement("div");
+
+               // Случайно выбираем класс для попкорна
+               const randomClass = popcornClasses[Math.floor(Math.random() * popcornClasses.length)];
+               popcorn.classList.add("popcorn", randomClass);
+
+               popcorn.style.left = `${x}px`;
+               popcorn.style.top = `${y + window.scrollY}px`; // Adjust for scroll position
+               popcorn.style.position = "absolute"; // Use absolute positioning
+
+               document.body.appendChild(popcorn);
+
+               const velocity = {
+                  x: (Math.random() - 0.5) * 10,
+                  y: Math.random() * -10 - 5,
+               };
+
+               popcorns.push({ element: popcorn, velocity });
+            }
+
+            // Handle click event
+            clickElement.addEventListener("click", (e) => {
+               const rect = clickElement.getBoundingClientRect();
+               const x = rect.left + rect.width / 2;
+               const y = rect.top;
+
+               // Создаем 2-3 попкорна за одно нажатие
+               const popcornCount = Math.floor(Math.random() * 2) + 2; // Случайное число от 2 до 3
+               for (let i = 0; i < popcornCount; i++) {
+                  createPopcorn(x, y);
+               }
+            });
+
+            // Check for collisions between two popcorns
+            function checkCollision(popcornA, popcornB) {
+               const rectA = popcornA.element.getBoundingClientRect();
+               const rectB = popcornB.element.getBoundingClientRect();
+
+               return !(
+                  rectA.right < rectB.left ||
+                  rectA.left > rectB.right ||
+                  rectA.bottom < rectB.top ||
+                  rectA.top > rectB.bottom
+               );
+            }
+
+            // Resolve collision between two popcorns
+            function resolveCollision(popcornA, popcornB) {
+               const rectA = popcornA.element.getBoundingClientRect();
+               const rectB = popcornB.element.getBoundingClientRect();
+
+               // Calculate overlap
+               const overlapX = Math.min(rectA.right, rectB.right) - Math.max(rectA.left, rectB.left);
+               const overlapY = Math.min(rectA.bottom, rectB.bottom) - Math.max(rectA.top, rectB.top);
+
+               // Push them apart based on the smaller overlap
+               if (overlapX < overlapY) {
+                  if (rectA.left < rectB.left) {
+                     popcornA.velocity.x = -Math.abs(popcornA.velocity.x);
+                     popcornB.velocity.x = Math.abs(popcornB.velocity.x);
+                  } else {
+                     popcornA.velocity.x = Math.abs(popcornA.velocity.x);
+                     popcornB.velocity.x = -Math.abs(popcornB.velocity.x);
+                  }
+               } else {
+                  if (rectA.top < rectB.top) {
+                     popcornA.velocity.y = -Math.abs(popcornA.velocity.y);
+                     popcornB.velocity.y = Math.abs(popcornB.velocity.y);
+                  } else {
+                     popcornA.velocity.y = Math.abs(popcornA.velocity.y);
+                     popcornB.velocity.y = -Math.abs(popcornB.velocity.y);
+                  }
+               }
+            }
+
+            // Update popcorn positions
+            function updatePopcorns() {
+               popcorns.forEach((popcornObj, index) => {
+                  const { element, velocity } = popcornObj;
+
+                  // Get current position
+                  let currentX = parseFloat(element.style.left);
+                  let currentY = parseFloat(element.style.top) - window.scrollY; // Adjust for scroll position
+
+                  // Update velocity
+                  velocity.y += gravity;
+
+                  // Update position
+                  let newX = currentX + velocity.x;
+                  let newY = currentY + velocity.y;
+
+                  // Check for collisions with screen edges
+                  if (newX <= 0 || newX + element.offsetWidth >= window.innerWidth) {
+                     velocity.x *= -bounceFactor;
+                     newX = Math.max(0, Math.min(newX, window.innerWidth - element.offsetWidth));
+                  }
+
+                  if (newY + element.offsetHeight >= window.innerHeight) {
+                     velocity.y *= -bounceFactor;
+                     newY = window.innerHeight - element.offsetHeight;
+
+                     // Stop bouncing if velocity is very low
+                     if (Math.abs(velocity.y) < 1) {
+                        velocity.y = 0;
+                     }
+                  }
+
+                  // Apply new position (adjust for scroll)
+                  element.style.left = `${newX}px`;
+                  element.style.top = `${newY + window.scrollY}px`;
+
+                  // Check for collisions with other popcorns
+                  for (let i = 0; i < popcorns.length; i++) {
+                     if (i !== index) {
+                        const otherPopcorn = popcorns[i];
+                        if (checkCollision(popcornObj, otherPopcorn)) {
+                           resolveCollision(popcornObj, otherPopcorn);
+                        }
+                     }
+                  }
+
+                  // Handle mouse interaction when pressed
+                  if (isMouseDown) {
+                     const dx = currentX + element.offsetWidth / 2 - mouseX;
+                     const dy = currentY + element.offsetHeight / 2 - mouseY;
+                     const distance = Math.sqrt(dx * dx + dy * dy);
+
+                     if (distance < 100) {
+                        const force = (100 - distance) / 10;
+                        velocity.x += (dx / distance) * force;
+                        velocity.y += (dy / distance) * force;
+                     }
+                  }
+               });
+            }
+
+            // Mouse interaction
+            document.addEventListener("mousedown", (e) => {
+               if (e.button === 0) {
+                  // Check if left mouse button is pressed
+                  isMouseDown = true;
+               }
+            });
+
+            document.addEventListener("mouseup", () => {
+               isMouseDown = false;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+               mouseX = e.clientX;
+               mouseY = e.clientY;
+            });
+
+            // Animation loop
+            function animate() {
+               updatePopcorns();
+               requestAnimationFrame(animate);
+            }
+
+            animate();
+         });
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+   </body>
+</html>

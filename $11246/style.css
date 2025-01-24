@@ -1,0 +1,453 @@
+@font-face {
+   font-family: 'Official Day';
+   src: url('./fonts/OfficialDayRegular.woff2') format('woff2'),
+       url('./fonts/OfficialDayRegular.woff') format('woff'),
+       url('./fonts/Official Day.otf') format('opentype'), 
+       url('./fonts/OfficialDayRegular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+} 
+
+* {
+   font-family: "Inria Serif", serif !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.networks div {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+}
+
+.networks a {
+  display: block;
+}
+
+
+._container {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 1080px;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 60px;
+}
+
+.title {
+   transform: rotate(7.639deg);
+   color: #2F323A;
+text-align: center;
+font-family: "Inria Serif";
+font-size: 43px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+opacity: 0.75;
+filter: blur(0.20000000298023224px);
+max-width: 422px;
+}
+
+.top {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-right: 50px;
+}
+
+.title span {
+   opacity: 0.75;
+color: #2F323A;
+font-family: "Inria Serif";
+font-size: 117px;
+font-style: normal;
+font-weight: 400;
+line-height: 99.589%;
+}
+
+.paper__section {
+   position: relative;
+   padding: 84px 110px 84px 166px;
+}
+
+
+
+@keyframes moveBackground {
+   from {
+     background-position: 0 0;
+   }
+   to {
+     background-position: -100% 0; /* Двигается влево */
+   }
+ }
+
+.text {
+   transform: rotate(6.763deg);
+   color: #000;
+text-align: center;
+font-family: "Kosugi Maru", serif !important; 
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+max-width: 350px;
+margin-top: 10px;
+margin-right: 50px;
+
+}
+.ca {
+   color: #000;
+font-family: "Official Day" !important;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+transform: rotate(8.641deg);
+margin-top: 20px;
+}
+
+.buy {
+   display: inline-block;
+   margin-top: 40px;
+}
+
+.bottom {
+   display: flex;
+   margin-top: 145px;
+   width: 100%;
+   min-width: 600px;
+}
+
+.mb-10 {
+   margin-bottom: 10px;
+}
+
+.paper {
+   position: absolute;
+   top: 10px;
+   left: 59%;
+   transform: translateX(-50%);
+}
+
+.wrapper {
+   background-image: url('./image/bg.png'); /* Замените на ваш файл */
+  background-repeat: repeat-x; /* Повторяет фон по горизонтали */
+  background-size: cover; /* Настраивает размер */
+  width: 100%;
+  height: 100vh; /* Высота экрана */
+  animation: moveBackground 30s linear infinite; /* Анимация */
+}
+
+@media (max-width:1300px) {
+   .paper {
+
+      left: 65%;
+   }
+}
+
+@media (max-width:800px) {
+   .paper {
+
+      left: 80%;
+   }
+}
+
+
+.show-550 {
+   display: none;
+}
+
+
+
+.bgmb {
+   position: absolute;
+bottom: 0;
+left: 0;
+z-index: -1;
+width: 100%;
+
+}
+
+@media (max-width:550px) {
+   .show-550 {
+      display: flex;
+   }
+   .hide-550 {
+      display: none;
+   }
+   .wrapper {
+      background-image: url('./image/bgmb.png'); /* Замените на ваш файл */
+      background-repeat: repeat-x; /* Повторяет фон по горизонтали */
+      background-size: auto; /* Оставляем оригинальный размер по высоте */
+      background-position: bottom; /* Прижимаем фон к низу */
+      animation: moveBackground 30s linear infinite; /* Анимация */
+      height: 100vh; /* Высота экрана */
+    }
+   .paper {
+      top: 0;
+      left: 0;
+      transform: translateX(0);
+   }
+   .paper__section {
+      padding: 30px 20px;
+      max-width: 100vw;
+      position: relative;
+   }
+   .title {
+      transform: rotate(1.459deg);
+      font-size: 27.738px;
+      max-width: 272px;
+   }
+   .title span {
+      font-size: 75.474px;
+   }
+   .text {
+      transform: rotate(-0.136deg);
+      max-width: 250px;
+      font-size: 14px;
+      margin-right: 0;
+   }
+   .ca {
+      font-size: 24px;
+      transform: rotate(0.958deg);
+   }
+   .networks {
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+   }
+   .bottom {
+      flex-direction: column;
+      min-width: 300px;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+   }
+   .buy, .networks {
+      position: relative;
+      z-index: 100;
+   }
+   .networks a {
+      margin-bottom: 0;
+      transform: rotate(0.686deg);
+
+   }
+   .mr-10 {
+      margin-right: 20px;
+   }
+   .top {
+      margin-right: 0;
+   }
+   .content {
+      padding-top: 0;
+      margin-top: -20px;
+   }
+   .paper__section {
+      padding-top: 55px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}

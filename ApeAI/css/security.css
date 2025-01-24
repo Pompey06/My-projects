@@ -120,6 +120,10 @@
   gap: 24px;
 }
 
+.header__buttons button {
+   font-size: 20px;
+}
+
 .left {
   padding: 32px;
   border-radius: 22px;

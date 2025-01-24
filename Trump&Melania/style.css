@@ -1,0 +1,433 @@
+@font-face {
+   font-family: 'Monument Extended';
+   src: url('./fonts/MonumentExtended-Regular.woff2') format('woff2'),
+       url('./fonts/MonumentExtended-Regular.woff') format('woff'),
+       url('./fonts/MonumentExtended-Regular.otf') format('opentype'), 
+       url('./fonts/MonumentExtended-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+* {
+   font-family: 'Monument Extended' !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 41px;
+}
+
+._container {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding-top: 23px;
+   position: relative;
+   z-index: 10;
+   padding-bottom: 100px;
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   width: 100%;
+   padding: 15px 87px;
+   border-radius: 18px;
+border: 1px solid #FFF;
+background: radial-gradient(583% 357.84% at 30.75% 316.2%, #FF61D3 0%, rgba(0, 0, 0, 0.00) 100%), rgba(0, 0, 0, 0.20);
+backdrop-filter: blur(25px);
+}
+
+.main {
+   position: absolute;
+   top: 240px;
+   left: 0;
+   width: 100vw;
+}
+
+.guests {
+   padding-top: 754px;
+}
+
+.card__info {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+}
+
+.card__title {
+   color: #FFF;
+   font-family: "Monument Extended";
+   font-size: 48px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}
+
+.card__text {
+   color: #FFF;
+   font-family: "Red Hat Text", serif !important;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.card {
+   display: flex;
+   gap: 48px;
+   align-items: start;
+   padding: 32px;
+   border-radius: 34px;
+border: 1px solid #FFF;
+background: radial-gradient(157.35% 135.3% at -5.78% 136.13%, #FF61D3 0%, rgba(0, 0, 0, 0.00) 100%), rgba(0, 0, 0, 0.20);
+backdrop-filter: blur(25px);
+}
+
+.guests {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.small__cards {
+   justify-content: center;
+   flex-wrap: wrap;
+   display: flex;
+   gap: 48px;
+   margin-bottom: 39px;
+}
+
+.small__cards .card {
+   max-width: 600px;
+}
+
+.big__cards {
+   display: flex;
+   gap: 48px;
+   width: 100%;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.big__cards .card {
+   flex: 1;
+}
+
+@media (max-width:1250px) {
+   .title {
+      width: 90vw;
+   }
+   .card {
+      max-width: none !important;
+      width: 100%;
+   }
+}
+
+.show-768 {
+   display: none;
+}
+
+@media (max-width:768px) {
+   .show-768 {
+      display: flex;
+   }
+   .hide-768 {
+      display: none;
+   }
+   .header {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 13px 31px;
+   }
+   .card {
+      padding: 16px;
+   }
+   .card__title {
+      font-size: 20.613px;
+   }
+   .card__text {
+      font-size: 16px;
+   }
+   .cards {
+      display: flex;
+      flex-direction: column;
+      width: 95vw;
+   }
+   .guests__title {
+      width: 90vw;
+   }
+   .main {
+      top: 400px;
+   }
+   .guests {
+      padding-top: 450px;
+   }
+}
+
+@media (max-width:500px) {
+   .card__icon {
+      width: 105.642px;
+height: 105.642px;
+   }
+   .card {
+      gap: 20px;
+   }
+   .main {
+      top: 300px;
+   }
+   .guests {
+      padding-top: 270px;
+   }
+   .content {
+      padding-bottom: 20px;
+   }
+   .networks img {
+      width: 35px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-left {
+   transform: translateX(-200%); /* Начальное состояние для анимации появления */
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-right {
+   transform: translateX(200%); /* Начальное состояние для анимации появления */
+}
+
+.card._animate, .roadmap__card._animate {
+   transform: translateX(0%); /* Анимация появления */
+}
+
+.card:hover, .roadmap__card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.05); /* Объединяем translateX и scale */
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

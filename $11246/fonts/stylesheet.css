@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Official Day';
+    src: url('OfficialDayRegular.woff2') format('woff2'),
+        url('OfficialDayRegular.woff') format('woff'),
+        url('OfficialDayRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

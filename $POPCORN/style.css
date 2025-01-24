@@ -1,0 +1,396 @@
+
+* {
+   font-family: "Luckiest Guy", serif !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 59px;
+}
+
+._container {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+body {
+   max-height: 2160px; /* Ограничиваем высоту страницы */
+      overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding-top: 50px;
+   padding-bottom: 210px;
+}
+
+.buy {
+   display: inline-block;
+   margin-top: 10px;
+   margin-bottom: 30px;
+}
+
+.ca {
+   color: #FFF;
+text-align: center;
+font-family: "Luckiest Guy";
+font-size: 24.864px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+border-radius: 9.235px;
+background: #4A1E16;
+padding: 6px 26px;
+}
+
+.about {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 150px;
+}
+
+.about__text {
+   color: #FFF;
+text-align: center;
+text-shadow: 0px 4px 0px #4A1E16;
+font-family: "Luckiest Guy";
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+max-width: 1200px;
+}
+
+.about__title {
+   margin-bottom: 45px;
+}
+
+.title {
+   padding-top: 55px;
+}
+
+.click {
+   margin-top: -50px;
+   cursor: pointer;
+   user-select: none;
+}
+
+ .popcorn {
+   position: absolute;
+   background-size: cover;
+   pointer-events: none;
+ }
+
+ .popcorn1 {
+   width: 262px;
+   height: 213.542px;
+   background: url('./image/popcorn.png') no-repeat center/cover;
+ }
+
+ .popcorn2 {
+   width: 176px;
+   height: 158.488px;
+   background-image: url("./image/popcorn2.png");
+ }
+
+ .popcorn3 {
+   width: 89.162px;
+   height: 67.608px;
+   background-image: url("./image/popcorn3.png");
+ }
+
+ .popcorn4 {
+   width: 135px;
+   height: 127.513px;
+   background-image: url("./image/popcorn4.png");
+ }
+
+
+@media (max-width:1100px) {
+   .title {
+      width: 90vw;
+   }
+}
+
+.show-768 {
+   display: none;
+}
+
+@media (max-width:768px) {
+   .show-768 {
+      display: flex;
+   }
+   .hide-768 {
+      display: none;
+   }
+   .networks a:not(:last-child) {
+      margin-right: 42px;
+    }
+    .networks img {
+width: 35px;
+    }
+    .content {
+      padding-top: 87px;
+      padding-bottom: 120px;
+    }
+    .click {
+      width: 90vw;
+      margin-top: 0;
+    }
+    .ca {
+      font-size: 20px;
+      padding: 4px 20px;
+    }
+    .buy img {
+      width: 150px;
+    }
+    .about__title {
+      width: 80vw;
+      margin-bottom: 20px;
+    }
+    .title {
+      width: 80vw;
+      padding-top: 20px;
+   }
+   .about {
+      margin-top: 40px;
+   }
+   .about__text {
+      font-size: 22px;
+   }
+   .popcorn1 {
+      width: 73px;
+      height: 59.498px;
+      background: url('./image/popcorn.png') no-repeat center/cover;
+    }
+   
+    .popcorn2 {
+      width: 67px;
+      height: 60.334px;
+      background-image: url("./image/popcorn2.png");
+    }
+   
+    .popcorn3 {
+      width: 43.073px;
+      height: 35.022px;
+      background-image: url("./image/popcorn3.png");
+    }
+   
+    .popcorn4 {
+      width: 47px;
+      height: 44.394px;
+      background-image: url("./image/popcorn4.png");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
