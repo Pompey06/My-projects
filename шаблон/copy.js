@@ -2,15 +2,18 @@ const modal = document.querySelector(".copied_modal");
 
 const copies = document.querySelectorAll("[data-copy]");
 copies.forEach((copy) => {
-   // copy.addEventListener('click', () => {
    const clipboard = new ClipboardJS(copy, {
       text: function () {
-         // Получаем текст содержимого элемента
-         let text = copy.textContent.trim();
+         // Получаем значение атрибута data-copy
+         const dataCopy = copy.getAttribute("data-copy");
 
-         if (!text) {
-            text = copy.getAttribute("data-copy");
+         // Если data-copy имеет значение, копируем его
+         if (dataCopy) {
+            return dataCopy;
          }
+
+         // Если data-copy пустой, копируем содержимое элемента
+         let text = copy.textContent.trim();
 
          // Удаляем все <br> теги
          text = text.replace(/<br\s*\/?>/gi, "");
@@ -35,5 +38,4 @@ copies.forEach((copy) => {
    clipboard.on("error", function (e) {
       console.error("Ошибка при копировании");
    });
-   // });
 });

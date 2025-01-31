@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TT Firs Neue Trl';
+    src: url('TTFirsNeueTrl-Light.woff2') format('woff2'),
+        url('TTFirsNeueTrl-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

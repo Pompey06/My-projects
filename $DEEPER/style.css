@@ -1,0 +1,588 @@
+/*@font-face {
+   font-family: 'arco_cyrillicregular';
+   src: url('./fonts/rco-cyrillic-webfont.woff2') format('woff2'),
+        url('./fonts/arco-cyrillic-webfont.woff') format('woff'),
+        url('./fonts/arco-cyrillic.otf') format('opentype'), 
+        url('./fonts/arco-cyrillic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}*/
+
+@font-face {
+   font-family: 'GT Eesti Pro Display';
+   src: url('./fonts/GTEestiProDisplay-Bold.woff2') format('woff2'),
+   url('./fonts/gteestiprodisplay_bold.otf') format('opentype'), 
+       url('./fonts/GTEestiProDisplay-Bold.woff') format('woff');
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'GT Eesti Pro Display';
+   src: url('./fonts/GTEestiProDisplay-Light.woff2') format('woff2'),
+   url('./fonts/gteestiprodisplay_light.otf') format('opentype'), 
+       url('./fonts/GTEestiProDisplay-Light.woff') format('woff');
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'GT Eesti Pro Display';
+   src: url('./fonts/GTEestiProDisplay-Regular.woff2') format('woff2'),
+   url('./fonts/gteestiprodisplay_regular.otf') format('opentype'), 
+       url('./fonts/GTEestiProDisplay-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'GT Eesti Pro Display';
+   src: url('./fonts/GTEestiProDisplay-Medium.woff2') format('woff2'),
+   url('./fonts/gteestiprodisplay_medium.otf') format('opentype'), 
+       url('./fonts/GTEestiProDisplay-Medium.woff') format('woff');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+
+* {
+   font-family: 'GT Eesti Pro Display' !important;
+   color: #FFF;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 24px;
+}
+
+._container {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 34px;
+   padding-bottom: 50px;
+}
+
+.subtitle {
+   color: #FFF;
+text-align: center;
+font-family: "GT Eesti Pro Display";
+font-size: 37.907px;
+font-style: normal;
+font-weight: 350;
+line-height: normal;
+letter-spacing: 12.509px;
+margin-top: 20px;
+}
+
+.subtitle span, .title span {
+   color: #4D6BFE;
+}
+
+@media (min-width:1925px) {
+   .subtitle span {
+      color: #FFF;
+   }
+}
+
+.title {
+   color: #FFF;
+font-family: "GT Eesti Pro Display";
+font-size: 210.687px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.ca {
+   margin-top: 418px;
+   color: #FFF;
+text-align: center;
+font-family: "GT Eesti Pro Text";
+font-size: 24px;
+font-style: normal;
+font-weight: 350;
+line-height: normal;
+border-radius: 28.189px;
+border: 3px solid #4D6BFE;
+background: rgba(21, 21, 21, 0.20);
+backdrop-filter: blur(20px);
+padding: 12px 29.5px;
+}
+
+.btn {
+   color: #FFF;
+text-align: center;
+font-family: "GT Eesti Pro Display";
+font-size: 41.538px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+border-radius: 48.789px;
+border: 5.192px solid rgba(14, 48, 88, 0.20);
+background: #4D6BFE;
+backdrop-filter: blur(34.61538314819336px);
+padding: 21px 100px;
+margin-top: 34px;
+}
+
+
+
+
+
+
+.ai {
+   padding-top: 178px;
+   width: 100%;
+}
+
+.ai__title {
+   color: #FFF;
+text-align: center;
+font-family: "GT Eesti Pro Display";
+font-size: 56.724px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.ai__title p {
+   color: #4D6BFE;
+text-align: center;
+font-family: "GT Eesti Pro Display";
+font-size: 101.17px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+}
+
+.chat {
+   margin-top: 15px;
+   padding: 20px;
+   border-radius: 42px;
+border: 1px solid rgba(255, 255, 255, 0.20);
+background: radial-gradient(106.46% 107.18% at 63.96% 155.77%, #4D6BFE 0%, rgba(11, 20, 49, 0.00) 100%), radial-gradient(114.33% 117.87% at -26.54% 142.44%, #4D6BFE 0%, rgba(11, 20, 49, 0.00) 100%), #000;
+backdrop-filter: blur(25px);
+display: flex;
+flex-direction: column;
+gap: 20px;
+width: 100%;
+}
+
+.chat__window {
+   padding: 32px;
+   border-radius: 42px;
+border: 1px solid rgba(255, 255, 255, 0.20);
+background: radial-gradient(106.46% 107.18% at 63.96% 155.77%, #4D6BFE 0%, rgba(11, 20, 49, 0.00) 100%), radial-gradient(114.33% 117.87% at -26.54% 142.44%, #4D6BFE 0%, rgba(11, 20, 49, 0.00) 100%), #000;
+backdrop-filter: blur(25px);
+height: 624px;
+}
+
+.chat__form {
+   border-radius: 42px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+background: rgba(115, 115, 115, 0.30);
+box-shadow: 0px 0px 30px 0px rgba(50, 31, 13, 0.30);
+backdrop-filter: blur(25px);
+padding: 20px;
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.chat__input {
+   padding: 12px 24px;
+   border-radius: 40px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+background: rgba(115, 115, 115, 0.30);
+box-shadow: 0px 0px 30px 0px rgba(50, 31, 13, 0.30);
+backdrop-filter: blur(25px);
+color: #FFF;
+font-family: "GT Eesti Pro Display";
+font-size: 20px;
+font-style: normal;
+font-weight: 375;
+line-height: normal;
+width: 100%;
+opacity: 0.5;
+}
+
+.chat__input::placeholder {
+   opacity: 0.5;
+   color: #FFF;
+font-family: "GT Eesti Pro Display";
+font-size: 20px;
+font-style: normal;
+font-weight: 375;
+line-height: normal;
+}
+
+.value {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+}
+
+.message {
+   display: flex;
+   gap: 20px;
+}
+
+.name {
+   color: #FFF;
+font-family: "GT Eesti Pro Display";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.name span {
+   color: #4D6BFE;
+}
+
+.text {
+   color: #FFF;
+font-family: "GT Eesti Pro Text";
+font-size: 16px;
+font-style: normal;
+font-weight: 375;
+line-height: normal;
+opacity: 0.5;
+padding: 12px 24px;
+border-radius: 40px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+background: rgba(115, 115, 115, 0.30);
+box-shadow: 0px 0px 30px 0px rgba(50, 31, 13, 0.30);
+backdrop-filter: blur(25px);
+}
+
+
+@media (max-width:900px) {
+   .title {
+      font-size: 160px;
+   }
+   .subtitle {
+      font-size: 25px;
+   }
+   .chat__window {
+      height: 400px;
+   }
+}
+
+
+@media (max-width:680px) {
+   .ai__title p {
+      font-size: 60px;
+   }
+   .ai__title {
+      font-size: 30px;
+   }
+   .title {
+      font-size: 100px;
+   }
+}
+
+
+
+.show-500 {
+   display: none;
+}
+
+@media (max-width:500px) {
+   .show-500 {
+      display: flex;
+   }
+   .hide-500 {
+      display: none;
+   }
+   .message {
+      flex-direction: column;
+   }
+   .content {
+      padding-top: 22px;
+      padding-bottom: 22px;
+   }
+   .icon {
+      width: 54px;
+      height: 54px;
+   }
+   .text {
+      font-size: 14px;
+   }
+   .networks img {
+      width: 54px;
+   }
+   .title {
+      font-size: 73.813px;
+      margin-top: 5px;
+   }
+   .subtitle {
+text-align: center;
+font-family: "GT Eesti Pro Display";
+font-size: 13.281px;
+font-style: normal;
+font-weight: 350;
+line-height: normal;
+letter-spacing: 4.383px;
+margin-top: 43px;
+   }
+   .ca {
+      font-size: 17.087px;
+      padding: 8px 21px;
+      margin-top: 340px;
+   }
+   .btn {
+      font-size: 17.087px;
+      padding: 12px 60px;
+      margin-top: 20px;
+   }
+   .ai {
+      padding-top: 24px;
+   }
+   .ai__title {
+      font-size: 28.191px;
+   }
+   .ai__title p {
+      font-size: 50.279px;
+   }
+   .chat__window {
+      height: 629px;
+      padding: 20px;
+   }
+   .chat__form {
+      padding: 10px;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+   }
+   .chat__input {
+      font-size: 16px;
+   }
+   .chat__input::placeholder {
+      font-size: 16px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}

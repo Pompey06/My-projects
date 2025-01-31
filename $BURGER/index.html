@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>$BURGER</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <link rel="stylesheet" href="./style.css" />
+   </head>
+
+   <body>
+      <div class="wrapper">
+         <div class="content _container">
+            <div data-anim-on-scroll class="networks _left_anim_tr">
+               <a href="#" class="_scale_hover">
+                  <img src="./image/tg.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/x.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/screen.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/tools.svg" alt="" />
+               </a>
+            </div>
+            <h1 data-anim-on-scroll class="title _right_anim_tr">$BURGER</h1>
+            <div class="swiper burger-slider">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <img src="./image/burger.png" alt="Burger" class="burger" />
+                  </div>
+                  <div class="swiper-slide">
+                     <img src="./image/burger.png" alt="Burger" class="burger" />
+                  </div>
+                  <div class="swiper-slide">
+                     <img src="./image/burger.png" alt="Burger" class="burger" />
+                  </div>
+               </div>
+            </div>
+            <h3 data-anim-on-scroll class="subtitle _scale_anim">One bite, one trade, one Lambo away.</h3>
+            <div data-anim-on-scroll data-delay="0.6" data-copy class="ca _left_anim_tr">
+               000000000000000000000000000000000000000
+            </div>
+            <a data-anim-on-scroll data-delay="0.8" href="#" class="card btn _right_anim_tr"
+               ><img src="./image/btn.png" alt="" class="_scale_hover"
+            /></a>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <!-- <div class="loop-images">
+    <div class="left">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+    <div class="right">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+  </div> -->
+      <script>
+         const swiper = new Swiper(".burger-slider", {
+            loop: true, // Enable infinite loop
+            slidesPerView: "auto", // Show multiple slides at once
+            spaceBetween: 20, // Space between slides
+            autoplay: {
+               delay: 0, // No delay between transitions
+               disableOnInteraction: false, // Keep autoplay running
+            },
+            speed: 5000, // Adjust speed for smooth scrolling
+         });
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+      <script src="./animation.js"></script>
+   </body>
+</html>

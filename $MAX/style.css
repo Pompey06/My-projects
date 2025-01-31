@@ -1,0 +1,537 @@
+/*@font-face {
+   font-family: 'arco_cyrillicregular';
+   src: url('./fonts/rco-cyrillic-webfont.woff2') format('woff2'),
+        url('./fonts/arco-cyrillic-webfont.woff') format('woff'),
+        url('./fonts/arco-cyrillic.otf') format('opentype'), 
+        url('./fonts/arco-cyrillic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}*/
+
+@font-face {
+   font-family: 'Rounds';
+   src: url('./fonts/RoundsBlack.woff2') format('woff2'),
+   url('./fonts/Rounds Black.ttf') format('truetype'),
+       url('./fonts/RoundsBlack.woff') format('woff');
+   font-weight: 900;
+   font-style: normal;
+   font-display: swap;
+}
+
+
+* {
+   font-family: 'Rounds' !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 24px;
+}
+
+._container {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 30px;
+   padding-bottom: 10px;
+   position: relative;
+   z-index: 1000;
+}
+
+.title p {
+   color: #FFDF94;
+text-shadow: 0px 5.503px 5.503px rgba(0, 0, 0, 0.25);
+font-family: "Rounds Black";
+font-size: 108.814px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
+position: relative;
+z-index: 100;
+}
+
+.ca {
+   color: #D43F38;
+text-align: center;
+text-shadow: 0px 2.366px 2.366px rgba(0, 0, 0, 0.25);
+font-family: "Rounds Black";
+font-size: 35.11px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.second {
+   margin-top: -30px;
+}
+
+.rabbit {
+   margin-top: -40px;
+}
+
+.max {
+   position: relative;
+   z-index: 10;
+}
+
+.left {
+   position: absolute;
+   top: -28px;
+   left: 0;
+}
+
+.left-star {
+   position: absolute;
+   top: -28px;
+   left: 16%;
+}
+
+.right {
+   position: absolute;
+   top: -28px;
+   right: 0;
+}
+
+.right-star {
+   position: absolute;
+   top: -28px;
+   right: 18%;
+}
+
+.left {
+   transform-origin: top center;
+   animation: swing 5s infinite ease-in-out;
+ }
+
+ @keyframes swing {
+   0% {
+     transform: rotate(-15deg);
+   }
+   50% {
+     transform: rotate(15deg);
+   }
+   100% {
+     transform: rotate(-15deg);
+   }
+ }
+
+ .right {
+   transform-origin: top center;
+   animation: swing2 5s infinite ease-in-out;
+ }
+
+
+
+ @keyframes swing2 {
+   0% {
+     transform: rotate(15deg);
+   }
+   50% {
+     transform: rotate(-15deg);
+   }
+   100% {
+     transform: rotate(15deg);
+   }
+ }
+
+ .right-star {
+   transform-origin: top center;
+   animation: swing3 6s infinite ease-in-out;
+ }
+
+ @keyframes swing3 {
+   0% {
+     transform: rotate(10deg);
+   }
+   50% {
+     transform: rotate(-10deg);
+   }
+   100% {
+     transform: rotate(10deg);
+   }
+ }
+
+ .left-star {
+   transform-origin: top center;
+   animation: swing4 4s infinite ease-in-out;
+ }
+
+ @keyframes swing4 {
+   0% {
+     transform: rotate(-10deg);
+   }
+   50% {
+     transform: rotate(10deg);
+   }
+   100% {
+     transform: rotate(-10deg);
+   }
+ }
+
+
+.star {
+   position: absolute;
+      
+}
+
+.star__01 {
+   bottom: 8%;
+   left: 5%;
+   animation: rotateAndPulse 3s infinite ease-in-out;
+}
+
+.star__02 {
+   bottom: 25%;
+   left: 15%;
+   animation: rotateAndPulse2 4s infinite ease-in-out;
+
+}
+
+.star__03 {
+   bottom: 8%;
+   right: 5%;
+   animation: rotateAndPulse3 3.5s infinite ease-in-out;
+
+}
+
+.star__04 {
+   bottom: 25%;
+   right: 15%;
+   animation: rotateAndPulse4 3s infinite ease-in-out;
+
+}
+
+@keyframes rotateAndPulse {
+   0% {
+     transform: scale(1) rotate(0deg);
+   }
+   50% {
+     transform: scale(1.5) rotate(180deg);
+   }
+   100% {
+     transform: scale(1) rotate(360deg);
+   }
+ }
+
+ @keyframes rotateAndPulse2 {
+   0% {
+     transform: scale(1) rotate(0deg);
+   }
+   50% {
+     transform: scale(1.3) rotate(180deg);
+   }
+   100% {
+     transform: scale(1) rotate(360deg);
+   }
+ }
+
+ @keyframes rotateAndPulse3 {
+   0% {
+     transform: scale(1) rotate(0deg);
+   }
+   50% {
+     transform: scale(1.6) rotate(-180deg);
+   }
+   100% {
+     transform: scale(1) rotate(0deg);
+   }
+ }
+
+ @keyframes rotateAndPulse4 {
+   0% {
+     transform: scale(1) rotate(0deg);
+   }
+   50% {
+     transform: scale(1.5) rotate(180deg);
+   }
+   100% {
+     transform: scale(1) rotate(360deg);
+   }
+ }
+
+ .rabbit {
+   animation: hop 1s infinite ease-in-out;
+   position: relative;
+   z-index: 0;
+ }
+
+ @keyframes hop {
+   0% {
+     transform: translateY(0);
+   }
+   50% {
+     transform: translateY(-30px);
+   }
+   100% {
+     transform: translateY(0);
+   }
+ }
+
+ @media (max-width:768px) {
+   .left, .right {
+      width: 30vw;
+   }
+   .left-star, .right-star {
+      width: 15vw;
+   }
+   .star__03, .star__01 {
+      width: 15vw;
+   }
+   .star__02, .star__04 {
+      width: 10vw;
+   }
+ }
+
+ .show-500 {
+   display: none;
+ }
+
+ @media (max-width:500px) {
+   .hide-500 {
+      display: none;
+    }
+    .show-500 {
+      display: flex;
+    }
+      .networks img {
+         width: 45px;
+      }
+      .max {
+         margin-top: 25px;
+      }
+      .title {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+      .title p {
+         font-size: 55.653px;
+      }
+      .second {
+         text-align: center;
+         font-size: 35.748px !important;
+         max-width: 200px;
+         line-height: 1 !important;
+         margin-top: -15px;
+      }
+      .max {
+         width: 200px;
+      }
+      .rabbit {
+         width: 180px;
+      }
+      .buy img {
+         width: 177px;
+      }
+      .ca {
+         font-size: 20.15px;
+      }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}

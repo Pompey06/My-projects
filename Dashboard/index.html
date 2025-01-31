@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Dashboard</title>
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/bg.png" alt="" class="bg" />
+
+         <div class="content _container">
+            <div class="wallet">
+               <img src="./image/wallet.svg" alt="" class="wallet__icon" />
+               <div class="wallet__input-wrapper">
+                  <input placeholder="Enter Solana address" type="text" name="wallet" class="wallet__input" />
+                  <div class="custom-cursor"></div>
+               </div>
+            </div>
+            <div class="metrics__wrapper">
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/01.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Snapshot PnL</h3>
+                  </div>
+                  <div data-digits-counter class="value">$50,000</div>
+               </div>
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/02.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Profits</h3>
+                  </div>
+                  <div data-digits-counter="2000" class="value">$100,000</div>
+               </div>
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/03.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Losses</h3>
+                  </div>
+                  <div data-digits-counter class="value orange">$200,000</div>
+               </div>
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/04.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Biggest Win</h3>
+                  </div>
+                  <div data-digits-counter class="value yellow">$10,000</div>
+               </div>
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/05.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Win RateSol</h3>
+                  </div>
+                  <div data-digits-counter class="value yellow">%93,58</div>
+               </div>
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/06.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Tokens Traded</h3>
+                  </div>
+                  <div data-digits-counter class="value white">100</div>
+               </div>
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/07.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Oldest Swap</h3>
+                  </div>
+                  <div class="value white small">2020/00/00 10:00:00.000 UTC</div>
+               </div>
+               <div class="metric">
+                  <div class="metric__left">
+                     <img src="./image/07.svg" alt="" class="icon" />
+                     <h3 class="metric__name">Newest Swap</h3>
+                  </div>
+                  <div class="value white small">2020/00/00 10:00:00.000 UTC</div>
+               </div>
+            </div>
+            <div class="run _scale_hover">RUN</div>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <!-- <div class="loop-images">
+    <div class="left">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+    <div class="right">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+  </div> -->
+      <script src="./app.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+   </body>
+</html>
