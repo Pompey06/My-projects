@@ -146,7 +146,7 @@ width: 100%;
 
 .custom-cursor {
    position: absolute;
-   width: 2px;
+   width: 2.4px;
    height: 18px; /* Высота курсора */
    background-color: #D3D3D3; /* Цвет курсора */
    top: 50%;

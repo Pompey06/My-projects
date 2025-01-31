@@ -24,7 +24,7 @@ function windowLoad() {
 
       // Extract the start value and symbols from the element's content
       const originalText = digitsCounter.innerHTML.trim();
-      const endValue = parseFloat(originalText.replace(/[^0-9.]/g, "")) || 0; // Extract only numbers and decimal point
+      const endValue = parseFloat(originalText.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0; // Extract number, replace comma with dot for parsing
       const startPosition = 0; // Start counting from 0
 
       // Detect prefix and suffix (e.g., "$", "%")
@@ -32,30 +32,38 @@ function windowLoad() {
       const suffix = originalText.match(/[^\d]+$/)?.[0] || ""; // Non-numeric characters at the end
 
       // Determine the number of decimal places
-      const decimalPlaces = (originalText.split(".")[1] || "").length;
+      const decimalPlaces = (originalText.split(/[.,]/)[1] || "").length;
 
-      const isPercentage = suffix.includes("%"); // Проверка, является ли значение процентом
+      // Detect if the original format uses a comma as a decimal separator
+      const usesCommaAsDecimal = originalText.includes(",") && !originalText.includes(".");
 
       const step = (timestamp) => {
          if (!startTimestamp) startTimestamp = timestamp;
          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
          const currentValue = (progress * (endValue - startPosition) + startPosition).toFixed(decimalPlaces); // Keep decimal places
 
-         // Format the number with thousand separators
-         const formattedValue = currentValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+         // Format the number with the original decimal separator
+         let formattedValue = currentValue;
+         if (usesCommaAsDecimal) {
+            formattedValue = formattedValue.replace(".", ","); // Replace dot with comma for decimal separator
+         }
+
+         // Add thousand separators if needed
+         formattedValue = formattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, usesCommaAsDecimal ? "." : ","); // Use dot or comma for thousand separator
 
          // Update the element's content with the formatted value
-         digitsCounter.innerHTML = isPercentage ? `${formattedValue}${suffix}` : `${prefix}${formattedValue}${suffix}`; // Добавляем % только для процентных значений
+         digitsCounter.innerHTML = `${prefix}${formattedValue}${suffix}`;
 
          if (progress < 1) {
             window.requestAnimationFrame(step);
          } else {
             // Ensure the final value is properly formatted
-            const finalValue = endValue
-               .toFixed(decimalPlaces) // Keep decimal places
-               .toString()
-               .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            digitsCounter.innerHTML = isPercentage ? `${prefix}${finalValue}%` : `${prefix}${finalValue}${suffix}`;
+            let finalValue = endValue.toFixed(decimalPlaces);
+            if (usesCommaAsDecimal) {
+               finalValue = finalValue.replace(".", ","); // Replace dot with comma for decimal separator
+            }
+            finalValue = finalValue.replace(/\B(?=(\d{3})+(?!\d))/g, usesCommaAsDecimal ? "." : ","); // Add thousand separators
+            digitsCounter.innerHTML = `${prefix}${finalValue}${suffix}`;
          }
       };
 
@@ -84,7 +92,7 @@ function updateCursorPosition() {
    const font = window.getComputedStyle(input).font; // Шрифт инпута
    const textWidth = getTextWidth(inputValue, font); // Ширина текста до каретки
 
-   cursor.style.left = `${18 + textWidth + 2}px`; // Обновляем позицию курсора с отступом 1px
+   cursor.style.left = `${18 + textWidth + 2.5}px`; // Обновляем позицию курсора с отступом 1px
    cursor.style.display = "block"; // Показываем курсор
 }
 
