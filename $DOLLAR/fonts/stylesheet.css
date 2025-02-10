@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'BASQUIAT';
+    src: url('BASQUIATRegular.woff2') format('woff2'),
+        url('BASQUIATRegular.woff') format('woff'),
+        url('BASQUIATRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

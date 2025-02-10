@@ -1,0 +1,573 @@
+/*@font-face {
+   font-family: 'arco_cyrillicregular';
+   src: url('./fonts/rco-cyrillic-webfont.woff2') format('woff2'),
+        url('./fonts/arco-cyrillic-webfont.woff') format('woff'),
+        url('./fonts/arco-cyrillic.otf') format('opentype'), 
+        url('./fonts/arco-cyrillic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}*/
+
+@font-face {
+   font-family: 'Typeface Mario 64';
+   src: url('./fonts/TypefaceMario64.woff2') format('woff2'),
+       url('./fonts/TypefaceMario64.woff') format('woff'),
+       url('./fonts/TypefaceMario64.otf') format('opentype'), 
+       url('./fonts/TypefaceMario64.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+
+* {
+   font-family: 'Typeface Mario 64' !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 24px;
+}
+
+._container {
+  max-width: 1800px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  display: none;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 70px;
+   padding-bottom: 30px;
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.wrap {
+   display: flex;
+   align-items: center;
+}
+
+.right {
+   gap: 15px;
+}
+
+.ca {
+   max-width: 305px;
+   word-wrap: break-word;
+    word-break: break-word;
+   color: #000;
+font-family: "Typeface Mario 64";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 21.6px */
+padding: 14px 25px;
+background: url('./image/cabg.png') no-repeat center center / cover;
+}
+
+
+.first {
+   margin-top: -100px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.mario {
+   margin-top: 66px;
+}
+
+
+
+.second {
+   padding-top: 150px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 5.2vw;
+}
+
+.card {
+   width: 290.06px;
+   height: 290.06px;
+transform: rotate(14.564deg);
+background: #FFF;
+transition: all 0.4s ease 0s;
+}
+
+.card:hover {
+   box-shadow: 25px 41px 30.5px 0px rgba(0, 0, 0, 0.43);
+   transform: translateY(-20px) rotate(14.564deg);
+} 
+
+
+.footer {
+   margin-top: 106px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 80%;
+}
+
+.footer .networks a {
+   margin-left: -150px;
+
+ }
+
+
+.mario2 {
+   position: relative;
+   z-index: 100;
+   margin-top: -150px;
+   margin-right: -100px;
+}
+
+.card__img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+
+.loading__mario {
+   position: absolute;
+   left: 50%;
+   bottom: 5%;
+   transform: translateX(-50%);
+}
+
+.loading {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: transparent; /* Убираем черный фон */
+   display: flex;
+   z-index: 98; /* Уменьшаем z-index */
+}
+
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 99;
+   background: black;
+   pointer-events: none;
+   opacity: 0;
+   display: block; /* Добавляем это */
+}
+
+.fade-in {
+   animation: fadeIn 2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.fade-out {
+   animation: fadeOut 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes fadeOut {
+   from {
+      opacity: 1;
+   }
+   to {
+      opacity: 0;
+   }
+}
+
+
+
+.ca__wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 18px;
+   width: 400px;
+   margin: 108px;
+   max-height: max-content;
+}
+
+
+.contract {
+   max-width: 215px;
+   color: #000;
+text-align: center;
+font-family: "Typeface Mario 64";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 21.6px */
+word-wrap: break-word;
+word-break: break-word;
+}
+
+.loading__mario {
+   animation: jump 4s ease-in-out forwards;
+}
+
+@keyframes jump {
+   0% {
+      transform: translate(-50%, 0); /* Начальная позиция */
+   }
+   50% {
+      transform: translate(-50%, -190px); /* Подпрыгивает вверх */
+   }
+   100% {
+      transform: translate(-50%, 0); /* Возвращается вниз */
+   }
+}
+
+
+@media (max-width: 1750px) {
+   .first {
+      margin-top: 20px;
+   }
+}
+
+@media (max-width: 1630px) {
+   .footer .networks img {
+      width: 23.5vw;
+   }
+   .mario2 {
+      width: 27.3vw;
+   }
+}
+
+@media (max-width: 1300px) {
+.footer {
+   justify-content: center;
+   gap: 20px;
+   width: max-content;
+}
+}
+
+@media (max-width: 1000px) {
+   .footer .networks a {
+      margin-left: -100px;
+   }
+   .footer {
+      flex-direction: column-reverse;
+   }
+}
+
+.show-900 {
+   display: none;
+}
+@media (max-width: 900px) {
+   .show-900 {
+      display: flex;
+   }
+   .hide-900 {
+      display: none;
+   }
+   .header {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+   }
+   .wrap {
+      flex-direction: column;
+   }
+   .ca {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+   }
+   .coin {
+      width: 30px;
+      height: 30px;
+   }
+   .title {
+      width: 85vw;
+   }
+   .logo {
+      margin-top: -50px;
+   }
+}
+
+@media (max-width: 600px) {
+   .footer .networks {
+      flex-wrap: wrap;
+      max-width: 415px;
+      margin-left: 200px;
+   }
+   .mario2 {
+      margin-right: 0;
+   }
+   .footer .networks img {
+      width: 205px;
+   }
+   .mario2 {
+      min-width:245px;
+   }
+   .footer .networks a {
+      margin-left: 0;
+   }
+   .card {
+      width: 200px;
+      height: 200px;
+   }
+   .second {
+      padding-top: 0;
+   }
+}
+
+@media (max-width: 500px) {
+   .ca__wrapper {
+      margin: 20px;
+   }
+   @keyframes jump {
+      0% {
+         transform: translate(-50%, 0); /* Начальная позиция */
+      }
+      50% {
+         transform: translate(-50%, -140px); /* Подпрыгивает вверх */
+      }
+      100% {
+         transform: translate(-50%, 0); /* Возвращается вниз */
+      }
+   }
+   .loading__mario {
+      width: 120px;
+      bottom: 10%;
+   }
+
+}
+
+@media (max-width: 400px) {
+   .mario {
+      width: 90vw;
+   }
+   .header .networks img {
+      width: 59px;
+   }
+   .header .networks a:not(:last-child) {
+      margin-right: 8px;
+    }
+.content {
+   padding-top: 46px;
+}
+}
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}

@@ -9,7 +9,7 @@
 }*/
 
 * {
-   font-family: '' !important;
+   font-family: "", serif !important;
    color: #FFF;
 }
 
@@ -110,14 +110,6 @@
 
 
 
-
-
-
-
-
-
-
-
 [data-anim-on-scroll] {
   transition: all 0.4s ease 0s;
   opacity: 0;
@@ -180,7 +172,7 @@
 
 
 
-.loop-images .image {
+/*.loop-images .image {
   position: absolute;
   z-index: 1;
   bottom: -100%;
@@ -240,3 +232,48 @@
   animation-delay: 10s;
   animation: moveUp 8s linear infinite;
 }
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+   transform: translateX(-200%);
+}
+
+.card-right {
+   transform: translateX(200%);
+}
+
+.card._animate {
+   transform: translateX(0%);
+}
+
+.card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq {
+   transform: scale(0);
+   opacity: 0;
+   visibility: hidden; 
+   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uniq:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq._animate {
+   transform: scale(1);
+   opacity: 1; 
+   visibility: visible;
+}*/

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>VisionAI</title>
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/bg.png" alt="" class="bg" />
+
+         <div data-anim-on-scroll class="header top _scale_anim">
+            <div class="networks header__left">
+               <a href="#about" class="_scale_hover"> About </a>
+               <a href="#cases" class="_scale_hover"> Cases </a>
+               <a href="#try" class="_scale_hover"> Dapp</a>
+               <a href="#roadmap" class="_scale_hover"> Roadmap </a>
+            </div>
+            <div data-copy="0x000000000000000000000000" class="ca _scale_hover">Copy CA</div>
+            <div class="networks">
+               <a href="#" class="_scale_hover">
+                  <img src="./image/x.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/tg.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/book.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/tools.svg" alt="" />
+               </a>
+               <a href="#" class="_scale_hover">
+                  <img src="./image/screen.svg" alt="" />
+               </a>
+            </div>
+         </div>
+
+         <div class="content _container">
+            <section id="about" class="info">
+               <img src="./image/anim.gif" alt="" class="gif" />
+
+               <img src="./image/trump.png" alt="" class="trump _scale_hover" />
+               <img src="./image/car.png" alt="" class="car _scale_hover" />
+               <img src="./image/traffic.png" alt="" class="traffic _scale_hover" />
+               <img src="./image/people.png" alt="" class="people _scale_hover" />
+               <img data-anim-on-scroll src="./image/title.png" alt="" class="title _scale_anim" />
+               <!--<img data-anim-on-scroll src="./image/first.png" alt="" class="info__image _scale_anim" />-->
+               <p data-anim-on-scroll class="info__text _left_anim_tr">
+                  Vision AI is advanced machine vision technology that identifies objects from photos and videos with
+                  precision. With DePIN integration, it enables real-time detection, transforming industries with its
+                  speed and accuracy.
+               </p>
+               <a href="#try" class="launch top _scale_hover">
+                  <img data-anim-on-scroll src="./image/launch.svg" alt="" class="_right_anim_tr" />
+               </a>
+               <a href="#try" class="top _scale_hover"><img src="./image/lower.svg" alt="" /></a>
+            </section>
+            <section id="cases" class="cases">
+               <div class="cases__top">
+                  <h2 data-anim-on-scroll class="cases__title _left_anim_tr">Use cases for Vision AI machine vision</h2>
+                  <div data-anim-on-scroll class="cases__right _right_anim_tr">
+                     <div class="vision">// Vision AI</div>
+                     <div class="use_cases">
+                        <img src="./image/lamp.svg" alt="" class="lamp" />
+                        <button class="_scale_hover">Use cases</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="cases__cards">
+                  <img data-anim-on-scroll src="./image/01.svg" alt="" class="lines__image _scale_anim" />
+                  <div class="cards">
+                     <div data-anim-on-scroll class="card first-card _left_anim_tr">
+                        <img src="./image/02.svg" alt="" class="card__icon" />
+                        <h4 class="card__title">Traffic Monitoring</h4>
+                        <p class="card__text">
+                           Vision AI detects and identifies vehicles on the road, analyzing traffic flow and spotting
+                           violations or accidents in real-time
+                        </p>
+                        <video src="./image/traffic.MOV" autoplay muted class="card__video"></video>
+                     </div>
+                     <div data-anim-on-scroll class="card _scale_anim uniq second-card">
+                        <img src="./image/03.svg" alt="" class="card__icon" />
+                        <h4 class="card__title">Public Safety</h4>
+                        <p class="card__text">
+                           Vision AI recognizes potentially dangerous situations, such as individuals carrying weapons
+                           or acting suspiciously in public spaces, providing real-time alerts to ensure safety.
+                        </p>
+                        <video src="./image/public.mp4" autoplay muted class="card__video"></video>
+                     </div>
+                     <div data-anim-on-scroll class="card third-card _right_anim_tr">
+                        <img src="./image/04.svg" alt="" class="card__icon" />
+                        <h4 class="card__title">Retail Analytics</h4>
+                        <p class="card__text">
+                           Vision AI tracks customer movements in stores, identifies product interactions, and helps
+                           optimize layouts to enhance shopping experiences and boost sales.
+                        </p>
+                        <video src="./image/retail.MOV" autoplay muted class="card__video"></video>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section id="try" class="try">
+               <a href="#form" class="_scale_hover"
+                  ><img data-anim-on-scroll src="./image/try.svg" alt="" class="try__vision _scale_anim"
+               /></a>
+               <h2 class="try__title">Vision <span>AI</span></h2>
+               <div id="form" class="chat">
+                  <img
+                     id="preview"
+                     src="./image/start.png"
+                     alt=""
+                     class="start chat__image"
+                     style="border-radius: 30px"
+                  />
+                  <div class="chat__result none">
+                     <div class="relative">
+                        <img src="./image/analyzing-circle.png" alt="" class="analyzing chat__image" />
+                        <p class="analyzing__text">Analyzing</p>
+                     </div>
+                  </div>
+
+                  <form action="#" class="form">
+                     <input id="file" class="none" type="file" />
+                     <label for="file">
+                        <img src="./image/upload.svg" alt="" class="upload _scale_hover" />
+                     </label>
+                     <img src="./image/download.svg" alt="" class="download _scale_hover" />
+                     <input placeholder="Enter the name of the objects " type="text" class="input" />
+                     <img src="./image/analyze.svg" alt="" class="analyze _scale_hover" />
+                  </form>
+                  <div class="waiting none">
+                     <img src="./image/waiting.svg" alt="" />
+                     <p>Object detection in photos may take up to 2 minutes</p>
+                  </div>
+               </div>
+            </section>
+            <section id="roadmap" class="roadmap">
+               <h2 data-anim-on-scroll class="roadmap__title _scale_anim">Roadmap</h2>
+               <div class="roadmap__cards">
+                  <div class="line__wrap">
+                     <div class="line-def"></div>
+                     <div class="line-active"></div>
+                     <div class="circles">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                     </div>
+                  </div>
+
+                  <div data-anim-on-scroll class="roadmap__card card__left _left_anim_tr">
+                     <div class="phase">Phase 1</div>
+                     <ul class="roadmap__card_list">
+                        <li>Training Vision AI's machine vision system.</li>
+                        <li>Closed testing on photos and videos.</li>
+                        <li>Website launch with a demo version.</li>
+                        <li>
+                           Deploying on Solana and introducing Vision AI + DePIN prototypes with closed beta testing.
+                        </li>
+                     </ul>
+                  </div>
+                  <div data-anim-on-scroll class="roadmap__card card__right _right_anim_tr">
+                     <div class="phase">Phase 2</div>
+                     <ul class="roadmap__card_list">
+                        <li>Onboarding KOLs and partnering with DePIN + AI projects.</li>
+                        <li>Optimizing Vision AI + DePIN for beta testing by 1% supply holders.</li>
+                        <li>Listing on key platforms.</li>
+                     </ul>
+                  </div>
+                  <div data-anim-on-scroll class="roadmap__card card__left _left_anim_tr">
+                     <div class="phase">Phase 3</div>
+                     <ul class="roadmap__card_list">
+                        <li>Adding video object detection to the website.</li>
+                        <li>Expanding the team and continuing Vision AI + DePIN beta testing.</li>
+                        <li>Engaging global safety and security enterprises for beta participation.</li>
+                     </ul>
+                  </div>
+                  <div data-anim-on-scroll class="roadmap__card card__right _right_anim_tr">
+                     <div class="phase">Phase 4</div>
+                     <ul class="roadmap__card_list">
+                        <li>Public tests in partnership with major organizations.</li>
+                        <li>Hosting a large-scale AMA and engaging AI influencers on Twitter.</li>
+                        <li>Website launch with a demo version.</li>
+                        <li>Showcasing Vision AI at conferences with full-scale marketing efforts.</li>
+                     </ul>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <footer class="footer">
+            <div data-anim-on-scroll class="footer__left _left_anim_tr">
+               <img src="./image/logo.svg" alt="" class="footer__logo" />
+               <p class="footer__left_text">Advanced machine vision technology</p>
+               <p class="copyright">©2025 VISION AI</p>
+            </div>
+            <div data-anim-on-scroll class="footer__links _scale_anim">
+               <div class="footer__links_left">
+                  <div>Site Map</div>
+                  <a href="#about" class="_scale_hover">About</a>
+                  <a href="#cases" class="_scale_hover">Cases</a>
+                  <a href="#try" class="_scale_hover">Dapp</a>
+                  <a href="#roadmap" class="_scale_hover">Roadmap</a>
+               </div>
+               <div class="footer__links_left">
+                  <div>Social</div>
+                  <a href="#twiiter" class="_scale_hover">Twitter</a>
+                  <a href="#tg" class="_scale_hover">Telegram</a>
+                  <a href="#gitbook" class="_scale_hover">Gitbook</a>
+               </div>
+            </div>
+            <a href="#try"><img src="./image/higher.svg" alt="" class="higher _scale_hover" /></a>
+         </footer>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <!-- <div class="loop-images">
+    <div class="left">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+    <div class="right">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+  </div> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="app.js"></script>
+      <script src="./copy.js"></script>
+      <script src="animation.js"></script>
+   </body>
+</html>

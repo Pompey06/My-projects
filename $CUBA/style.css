@@ -1,0 +1,572 @@
+/*@font-face {
+   font-family: 'arco_cyrillicregular';
+   src: url('./fonts/rco-cyrillic-webfont.woff2') format('woff2'),
+        url('./fonts/arco-cyrillic-webfont.woff') format('woff'),
+        url('./fonts/arco-cyrillic.otf') format('opentype'), 
+        url('./fonts/arco-cyrillic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}*/
+
+* {
+   font-family: "Luckiest Guy", serif !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 24px;
+}
+
+._container {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 39px;
+   padding-bottom: 53px;
+}
+
+.subtitle {
+   color: #FFF;
+   text-align: center;
+   font-family: "Luckiest Guy";
+   font-size: 44px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1;
+   text-transform: uppercase;
+   margin-top: 30px;
+   background: linear-gradient(180deg, #F7EB35 0%, #FF9403 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.title {
+   text-align: center;
+   -webkit-text-stroke-width: 16;
+   -webkit-text-stroke-color: rgba(255, 255, 255, 0.50);
+   font-family: "Luckiest Guy";
+   font-size: 325px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1;
+   margin-top: -25px;
+   text-transform: uppercase;
+   background: linear-gradient(180deg, #F7EB35 0%, #FF9403 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.ca {
+   color: #FFF;
+text-align: center;
+font-family: "Luckiest Guy";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+padding: 12px 32px;
+border-radius: 52px;
+border: 2px solid #FFF;
+background: rgba(0, 0, 0, 0.20);
+}
+
+.buy {
+   color: #FFF;
+   text-align: center;
+   font-family: "Luckiest Guy";
+   font-size: 92px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   text-transform: uppercase;
+   border-radius: 27px;
+border: 6px solid rgba(255, 255, 255, 0.50);
+background: linear-gradient(180deg, #F7EB35 0%, #FF9403 100%), #FFF;
+backdrop-filter: blur(20px);
+margin-top: 360px;
+margin-bottom: 28px;
+padding: 0px 32px;
+}
+
+.img-1 {
+   position: absolute;
+   top: 15%;
+   left: 5%;
+   animation: first 5.5s infinite ease-in-out;
+   width: 23vw;
+}
+
+.img-2 {
+   position: absolute;
+   top: 40%;
+   left: 20%;
+   animation: pepe 4s infinite ease-in-out;
+   width: 20.5vw;
+}
+
+.img-3 {
+   position: absolute;
+   top: 45%;
+   left: 40%;
+   animation: wif 7s infinite ease-in-out;
+   width:17.5vw;
+}
+
+.img-4 {
+   position: absolute;
+   top: 35%;
+   left: 55%;
+   animation: doge 6s infinite ease-in-out;
+   width:24.27vw;
+}
+
+.img-5 {
+   position: absolute;
+   top: 15%;
+   right: 5%;
+   animation: musk 4.5s infinite ease-in-out;
+   width:17.5vw;
+}
+
+.title__image {
+   position: relative;
+   z-index: 10;
+}
+
+
+@keyframes first {
+   0% {
+       transform: rotate(-20deg);
+   }
+   50% {
+       transform: rotate(20deg);
+   }
+   100% {
+       transform: rotate(-20deg);
+   }
+}
+
+@keyframes pepe {
+   0% {
+       transform: rotate(20deg);
+   }
+   50% {
+       transform: rotate(-20deg);
+   }
+   100% {
+       transform: rotate(20deg);
+   }
+}
+
+@keyframes wif {
+   0% {
+       transform: rotate(20deg);
+   }
+   50% {
+       transform: rotate(-20deg);
+   }
+   100% {
+       transform: rotate(20deg);
+   }
+}
+
+@keyframes doge {
+   0% {
+       transform:  rotate(-20deg);
+   }
+   50% {
+       transform:  rotate(20deg);
+   }
+   100% {
+       transform:  rotate(-20deg);
+   }
+}
+
+@keyframes musk {
+   0% {
+       transform: rotate(-20deg);
+   }
+   50% {
+       transform: rotate(20deg);
+   }
+   100% {
+       transform: rotate(-20deg);
+   }
+}
+
+
+
+@media (max-width: 1100px) {
+   .subtitle {
+      font-size: 50px;
+   }
+   .title__image {
+      width: 90vw;
+   }
+   .buy {
+      margin-top: 200px;
+   }
+}
+
+@media (max-width: 650px) {
+   .title {
+      font-size: 100px;
+      margin-top: 0;
+   }
+   .subtitle {
+      font-size: 30px;
+   }
+   .networks img {
+      width: 50px;
+   }
+   .buy {
+      font-size: 50px;
+      margin-top: 200px;
+   }
+   .img-1 {
+      top: 40%;
+      left: 5%;
+      min-width: 134px;
+   }
+   
+   .img-2 {
+      top: 50%;
+      left: 20%;
+      min-width: 153px;
+   }
+   
+   .img-3 {
+      top: 50%;
+      left: 40%;
+
+
+      min-width: 100px;
+   }
+   
+   .img-4 {
+      top: 50%;
+      left: 55%;
+
+      min-width: 122px;
+   }
+   
+   .img-5 {
+      top: 40%;
+      right: 5%;
+
+      min-width: 100px;
+   }
+}
+
+.show-450 {
+   display: none;
+}
+
+@media (max-width: 450px) {
+   .hide-450 {
+      display: none;
+   }
+   .show-450 {
+      display: flex;
+   }
+   .title {
+      font-size: 78px;
+   }
+   .content {
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
+   .img-1 {
+      top: 35%;
+      left: 0%;
+      min-width: 134px;
+   }
+   
+   .img-2 {
+      top: 50%;
+      left: 3%;
+      min-width: 153px;
+   }
+   
+   .img-3 {
+      top: 50%;
+      left: 40%;
+
+
+      min-width: 100px;
+   }
+   
+   .img-4 {
+      top: 50%;
+      left: 65%;
+
+      min-width: 122px;
+   }
+   
+   .img-5 {
+      top: 35%;
+      right: 0%;
+
+      min-width: 100px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.1);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+   transform: translateX(-200%);
+}
+
+.card-right {
+   transform: translateX(200%);
+}
+
+.card._animate {
+   transform: translateX(0%);
+}
+
+.card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.1);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq {
+   transform: scale(0);
+   opacity: 0;
+   visibility: hidden; 
+   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uniq:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq._animate {
+   transform: scale(1);
+   opacity: 1; 
+   visibility: visible;
+}
+

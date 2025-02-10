@@ -1,0 +1,332 @@
+@font-face {
+   font-family: 'SCHABO';
+   src: url('./fonts/SCHABO-Condensed.woff2') format('woff2'),
+        url('./fonts/SCHABO-Condensed.woff') format('woff'),
+        url('./fonts/SCHABO-Condensed.otf') format('opentype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+* {
+   font-family: 'SCHABO' !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 24px;
+}
+
+._container {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 30px;
+   padding-bottom: 50px;
+}
+
+
+
+.title {
+   color: #FFF;
+text-align: center;
+font-family: SCHABO;
+font-size: 283.44px;
+font-style: normal;
+font-weight: 400;
+line-height: 1;
+text-transform: uppercase;
+margin-top: 15px;
+position: relative;
+z-index: 5;
+}
+
+.gif {
+   margin-top: -80px;
+   position: relative;
+   z-index: 5;
+}
+
+.dog {
+   margin-top: -80px;
+   position: relative;
+   z-index: 0;
+}
+
+.ca {
+   color: #FFF;
+text-align: center;
+font-family: SCHABO;
+font-size: 35.732px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+   padding: 5px 26px;
+   border-radius: 6.043px;
+border: 2.599px solid #0547E8;
+background: rgba(0, 0, 0, 0.20);
+backdrop-filter: blur(7.763673305511475px);
+}
+
+.buy {
+   margin-top: -20px;
+   position: relative;
+   z-index: 5;
+   margin-bottom: 23px;
+}
+
+
+@media (max-width: 720px) {
+   .title {
+      font-size: 122.22px;
+   }
+   .gif {
+      width: 93.5px;
+      margin-top: -40px;
+   }
+
+   .networks img {
+      width: 51px;
+   }
+
+   .dog {
+      width: 86.1vw;
+   }
+}
+
+.show-500 {
+   display: none;
+}
+
+@media (max-width: 500px) {
+   .show-500 {
+      display: flex;
+   }
+   .hide-500 {
+      display: none;
+   }
+   .buy img {
+      width: 150px;
+   }
+   .ca {
+      font-size: 36px;
+      padding: 4px 26px;
+   }
+   .dog {
+      margin-top: 0px;
+   }
+   .buy {
+      margin-top: 0;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+
+
+.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
