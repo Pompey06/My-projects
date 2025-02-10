@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   chatResult.classList.add("none");
                   waitingDiv.classList.add("none");
                   startImage.classList.remove("none");
+                  downloadBtn.style.display = "block";
                   startImage.src = domain + responseData.url;
                   form.classList.remove("none");
                } else if (statusData.status === "failed") {
@@ -111,17 +112,14 @@ window.addEventListener("scroll", () => {
    }
 });
 
-// Получаем необходимые элементы
 const fileInput = document.getElementById("file");
 const previewImage = document.getElementById("preview");
 const downloadBtn = document.querySelector(".download");
-const analyzeBtn = document.querySelector(".analyze");
-const input = document.querySelector(".input");
 
 // Изначально скрываем кнопку скачивания
 downloadBtn.style.display = "none";
 
-// Слушаем событие изменения файла для загрузки
+// Обработчик загрузки файла
 fileInput.addEventListener("change", (event) => {
    const file = event.target.files[0];
 
@@ -139,74 +137,7 @@ fileInput.addEventListener("change", (event) => {
    }
 });
 
-// Функция для проверки статуса
-async function checkStatus(genId) {
-   try {
-      const response = await fetch(`/api/status/${genId}`);
-      const data = await response.json();
-
-      if (data.status === "completed") {
-         // Когда запрос выполнен успешно
-         const yoloResponse = await fetch("/api/commonYOLO", {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ ident: genId }),
-         });
-
-         const yoloData = await yoloResponse.json();
-
-         // Обновляем изображение и показываем кнопку скачивания
-         previewImage.src = yoloData.url;
-         downloadBtn.style.display = "block";
-         return true;
-      } else if (data.status === "failed") {
-         console.error("Generation failed");
-         return true;
-      }
-      return false;
-   } catch (error) {
-      console.error("Error checking status:", error);
-      return true;
-   }
-}
-
-// Функция для отправки файла на сервер
-async function uploadFile() {
-   const file = fileInput.files[0];
-   if (!file) return;
-
-   const formData = new FormData();
-   formData.append("image", file);
-   formData.append("tags", input.value);
-
-   try {
-      const response = await fetch("/api/generate_yolo", {
-         method: "POST",
-         body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.gen_id) {
-         // Начинаем проверять статус каждые 2 секунды
-         const checkInterval = setInterval(async () => {
-            const isDone = await checkStatus(data.gen_id);
-            if (isDone) {
-               clearInterval(checkInterval);
-            }
-         }, 2000);
-      }
-   } catch (error) {
-      console.error("Error uploading file:", error);
-   }
-}
-
-// Слушаем клик на кнопку анализа
-analyzeBtn.addEventListener("click", uploadFile);
-
-// Слушаем событие клика для скачивания
+// Обработчик для кнопки download
 downloadBtn.addEventListener("click", function () {
    const link = document.createElement("a");
    const imageUrl = previewImage.src;
