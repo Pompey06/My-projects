@@ -9,7 +9,7 @@
 }*/
 
 * {
-   font-family: "Luckiest Guy", serif !important;
+   font-family: "", serif !important;
    color: #FFF;
 }
 
@@ -25,6 +25,11 @@
 .networks {
   display: flex;
   align-items: center;
+}
+
+.ca {
+   word-wrap: break-word;
+   max-width: 100%;
 }
 
 .networks a {
