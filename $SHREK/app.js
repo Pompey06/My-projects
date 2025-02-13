@@ -12,15 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const headerWidth = header.offsetWidth;
       const leftNetworkWidth = leftNetwork.offsetWidth;
       const rightNetworkWidth = rightNetwork.offsetWidth;
-
-      // Определяем желаемое расстояние между networks
-      const targetGap = window.innerWidth <= 800 ? 13 : 60;
-
-      // Вычисляем текущее расстояние между networks
       const currentGap = headerWidth - (leftNetworkWidth + rightNetworkWidth);
 
-      // Вычисляем на сколько нужно сдвинуть каждый блок
-      const moveDistance = (currentGap - targetGap) / 2;
+      // Определяем желаемое расстояние в зависимости от ширины экрана
+      const desiredGap = window.innerWidth <= 900 ? 13 : 60;
+
+      const moveDistance = (currentGap - desiredGap) / 2;
 
       return Math.max(moveDistance, 0);
    }
@@ -50,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
    resizeObserver.observe(header);
 
    window.addEventListener("scroll", handleScroll);
+   window.addEventListener("resize", handleScroll); // Добавим обработчик изменения размера окна
    handleScroll();
 });
 
@@ -62,31 +60,14 @@ function createArrow() {
    arrow.className = "arrow";
 
    const side = Math.random() > 0.5 ? "left" : "right";
-   const startX = side === "left" ? -100 : window.innerWidth + 100;
+   // Увеличиваем отступ для старта и финиша на 300px
+   const startX = side === "left" ? -300 : window.innerWidth + 300;
    const startY = random(window.innerHeight * 0.1, window.innerHeight * 0.9);
-   const endX = side === "left" ? window.innerWidth + 100 : -100;
+   const endX = side === "left" ? window.innerWidth + 300 : -300;
    const endY = random(window.innerHeight * 0.1, window.innerHeight * 0.9);
 
    // Длительность полета от 3 до 4.5 секунд
-   const flightDuration = random(3000, 4500) + "ms";
-
-   if (side === "right") {
-      // Параболическая траектория для стрел справа
-      const distance = Math.abs(endX - startX);
-      const midX = startX + distance * 0.5;
-      const baseHeight = Math.min(startY, endY);
-      const maxHeight = baseHeight - random(100, 300);
-
-      arrow.style.animation = "flyParabolic var(--flight-duration) cubic-bezier(0.45, 0, 0.55, 1) forwards";
-      arrow.style.setProperty("--mid-x", `${midX}px`);
-      arrow.style.setProperty("--mid-y", `${maxHeight}px`);
-      arrow.style.setProperty("--start-rotation", "-135deg");
-      arrow.style.setProperty("--mid-rotation", "-150deg");
-      arrow.style.setProperty("--end-rotation", "-135deg");
-   } else {
-      // Прямая траектория для стрел слева
-      arrow.style.setProperty("--rotation", "45deg");
-   }
+   const flightDuration = random(1500, 2500) + "ms";
 
    arrow.classList.add(side === "left" ? "left-side" : "right-side");
    arrow.style.setProperty("--flight-duration", flightDuration);
@@ -94,6 +75,7 @@ function createArrow() {
    arrow.style.setProperty("--start-y", `${startY}px`);
    arrow.style.setProperty("--end-x", `${endX}px`);
    arrow.style.setProperty("--end-y", `${endY}px`);
+   arrow.style.setProperty("--rotation", side === "left" ? "45deg" : "-135deg");
 
    document.getElementById("arrowContainer").appendChild(arrow);
    arrow.classList.add("flying");
@@ -128,3 +110,14 @@ window.addEventListener("scroll", () => {
       launchArrows();
    }
 });
+function updateHeartsContainer() {
+   const pageHeight = document.documentElement.scrollHeight;
+   const containers = document.querySelectorAll(".loop-images .left, .loop-images .center, .loop-images .right");
+
+   containers.forEach((container) => {
+      container.style.height = pageHeight + "px";
+   });
+}
+
+window.addEventListener("load", updateHeartsContainer);
+window.addEventListener("resize", updateHeartsContainer);

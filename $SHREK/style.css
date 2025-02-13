@@ -123,14 +123,13 @@ html {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   width: 100%;
    position: fixed;
   top: 30px; /* или другой отступ сверху по вашему усмотрению */
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
   z-index: 100;
-  padding: 0 20px;
+  gap: 60px;
   transition: all 0.5s ease;
   z-index: 100000000000000 !important;
 }
@@ -253,7 +252,7 @@ line-height: normal;
    top: 0px;
    left: 50%;
    transform: translateX(-50%);
-   z-index: 2;
+   z-index: 0;
    animation: floatUpDown 3s ease-in-out infinite;
 }
 
@@ -306,20 +305,6 @@ line-height: normal;
    100% {
        opacity: 1;
        transform: translate(var(--end-x), var(--end-y)) rotate(var(--rotation));
-   }
-}
-
-@keyframes flyParabolic {
-   0% {
-       opacity: 1;
-       transform: translate(var(--start-x), var(--start-y)) rotate(var(--start-rotation));
-   }
-   50% {
-       transform: translate(var(--mid-x), var(--mid-y)) rotate(var(--mid-rotation));
-   }
-   100% {
-       opacity: 1;
-       transform: translate(var(--end-x), var(--end-y)) rotate(var(--end-rotation));
    }
 }
 
@@ -496,74 +481,96 @@ line-height: normal;
   }
 }
 
+/*.anim-card {
+   animation: anim-card 3s ease-in-out infinite;
+ }
+ 
+ @keyframes anim-card {
+ 
+   0%,
+   100% {
+     transform: scale(1) translateX(0%);
+   }
+ 
+   50% {
+     transform: scale(1.04) translateX(0%);
+   }
+ }*/
+
 
 
 
 .loop-images {
-   position: fixed;
+   position: absolute;
    width: 100%;
-   height: 100vh;
+   height: 100%;
    top: 0;
    left: 0;
    pointer-events: none;
    z-index: -1;
-   overflow: hidden;
- }
- 
- .loop-images .left,
- .loop-images .center,
- .loop-images .right {
+}
+
+.loop-images .left,
+.loop-images .center,
+.loop-images .right {
    position: absolute;
    width: 100%;
-   height: 100%;
- }
- 
- @keyframes moveDownVisibleHigh {
+   top: 0;
+   left: 0;
+}
+
+@keyframes moveDownVisibleHigh {
    0% { top: var(--start-position); opacity: 1; }
    90% { opacity: 1; }
-   100% { top: 60vh; opacity: 0; }
- }
- 
- @keyframes moveDownVisibleMid {
+   100% { top: calc(var(--start-position) + 1200px); opacity: 0; }
+}
+
+@keyframes moveDownVisibleMid {
    0% { top: var(--start-position); opacity: 1; }
    90% { opacity: 1; }
-   100% { top: 80vh; opacity: 0; }
- }
- 
- @keyframes moveDownVisibleLow {
+   100% { top: calc(var(--start-position) + 1400px); opacity: 0; }
+}
+
+@keyframes moveDownVisibleLow {
    0% { top: var(--start-position); opacity: 1; }
    90% { opacity: 1; }
-   100% { top: 100vh; opacity: 0; }
- }
- 
- .loop-images .image {
+   100% { top: calc(var(--start-position) + 1600px); opacity: 0; }
+}
+
+.loop-images .image {
    position: absolute;
    z-index: 1;
- }
- 
- /* Левая секция */
- .loop-images .left .image-1 { left: 3%;   --start-position: 15vh; top: var(--start-position); animation: moveDownVisibleHigh 15s linear infinite; }
- .loop-images .left .image-2 { left: 12%;  --start-position: 45vh; top: var(--start-position); animation: moveDownVisibleMid 12s linear infinite; }
- .loop-images .left .image-3 { left: 22%;  --start-position: 25vh; top: var(--start-position); animation: moveDownVisibleHigh 14s linear infinite; }
- .loop-images .left .image-4 { left: 28%;  --start-position: 65vh; top: var(--start-position); animation: moveDownVisibleLow 11s linear infinite; }
- .loop-images .left .image-5 { left: 35%;  --start-position: 5vh;  top: var(--start-position); animation: moveDownVisibleHigh 16s linear infinite; }
- .loop-images .left .image-6 { left: 42%;  --start-position: 35vh; top: var(--start-position); animation: moveDownVisibleMid 13s linear infinite; }
- 
- /* Центральная секция */
- .loop-images .center .image-1 { left: 45%;  --start-position: 55vh; top: var(--start-position); animation: moveDownVisibleLow 11s linear infinite; }
- .loop-images .center .image-2 { left: 52%;  --start-position: 20vh; top: var(--start-position); animation: moveDownVisibleHigh 15s linear infinite; }
- .loop-images .center .image-3 { left: 58%;  --start-position: 75vh; top: var(--start-position); animation: moveDownVisibleLow 10s linear infinite; }
- .loop-images .center .image-4 { left: 63%;  --start-position: 40vh; top: var(--start-position); animation: moveDownVisibleMid 13s linear infinite; }
- .loop-images .center .image-5 { left: 68%;  --start-position: 10vh; top: var(--start-position); animation: moveDownVisibleHigh 16s linear infinite; }
- .loop-images .center .image-6 { left: 73%;  --start-position: 60vh; top: var(--start-position); animation: moveDownVisibleLow 11s linear infinite; }
- 
- /* Правая секция */
- .loop-images .right .image-1 { left: 76%;  --start-position: 30vh; top: var(--start-position); animation: moveDownVisibleMid 14s linear infinite; }
- .loop-images .right .image-2 { left: 82%;  --start-position: 70vh; top: var(--start-position); animation: moveDownVisibleLow 10s linear infinite; }
- .loop-images .right .image-3 { left: 87%;  --start-position: 15vh; top: var(--start-position); animation: moveDownVisibleHigh 15s linear infinite; }
- .loop-images .right .image-4 { left: 92%;  --start-position: 50vh; top: var(--start-position); animation: moveDownVisibleMid 12s linear infinite; }
- .loop-images .right .image-5 { left: 95%;  --start-position: 25vh; top: var(--start-position); animation: moveDownVisibleHigh 14s linear infinite; }
- .loop-images .right .image-6 { left: 98%;  --start-position: 45vh; top: var(--start-position); animation: moveDownVisibleMid 12s linear infinite; }
+}
+
+/* Левая секция */
+.loop-images .left .image-1 { left: 3%;   --start-position: 100px;   top: var(--start-position); animation: moveDownVisibleHigh 15s linear infinite; }
+.loop-images .left .image-2 { left: 12%;  --start-position: 800px;   top: var(--start-position); animation: moveDownVisibleMid 12s linear infinite; }
+.loop-images .left .image-3 { left: 22%;  --start-position: 1500px;  top: var(--start-position); animation: moveDownVisibleHigh 14s linear infinite; }
+.loop-images .left .image-4 { left: 28%;  --start-position: 2200px;  top: var(--start-position); animation: moveDownVisibleLow 11s linear infinite; }
+.loop-images .left .image-5 { left: 35%;  --start-position: 2900px;  top: var(--start-position); animation: moveDownVisibleHigh 16s linear infinite; }
+.loop-images .left .image-6 { left: 42%;  --start-position: 3600px;  top: var(--start-position); animation: moveDownVisibleMid 13s linear infinite; }
+.loop-images .left .image-7 { left: 8%;   --start-position: 4300px;  top: var(--start-position); animation: moveDownVisibleLow 14s linear infinite; }
+.loop-images .left .image-8 { left: 15%;  --start-position: 5000px;  top: var(--start-position); animation: moveDownVisibleHigh 15s linear infinite; }
+
+/* Центральная секция */
+.loop-images .center .image-1 { left: 45%;  --start-position: 300px;   top: var(--start-position); animation: moveDownVisibleLow 11s linear infinite; }
+.loop-images .center .image-2 { left: 52%;  --start-position: 1000px;  top: var(--start-position); animation: moveDownVisibleHigh 15s linear infinite; }
+.loop-images .center .image-3 { left: 58%;  --start-position: 1700px;  top: var(--start-position); animation: moveDownVisibleLow 10s linear infinite; }
+.loop-images .center .image-4 { left: 63%;  --start-position: 2400px;  top: var(--start-position); animation: moveDownVisibleMid 13s linear infinite; }
+.loop-images .center .image-5 { left: 68%;  --start-position: 3100px;  top: var(--start-position); animation: moveDownVisibleHigh 16s linear infinite; }
+.loop-images .center .image-6 { left: 73%;  --start-position: 3800px;  top: var(--start-position); animation: moveDownVisibleLow 11s linear infinite; }
+.loop-images .center .image-7 { left: 48%;  --start-position: 4500px;  top: var(--start-position); animation: moveDownVisibleMid 12s linear infinite; }
+.loop-images .center .image-8 { left: 55%;  --start-position: 5200px;  top: var(--start-position); animation: moveDownVisibleLow 13s linear infinite; }
+
+/* Правая секция */
+.loop-images .right .image-1 { left: 76%;  --start-position: 500px;   top: var(--start-position); animation: moveDownVisibleMid 14s linear infinite; }
+.loop-images .right .image-2 { left: 82%;  --start-position: 1200px;  top: var(--start-position); animation: moveDownVisibleLow 10s linear infinite; }
+.loop-images .right .image-3 { left: 87%;  --start-position: 1900px;  top: var(--start-position); animation: moveDownVisibleHigh 15s linear infinite; }
+.loop-images .right .image-4 { left: 92%;  --start-position: 2600px;  top: var(--start-position); animation: moveDownVisibleMid 12s linear infinite; }
+.loop-images .right .image-5 { left: 95%;  --start-position: 3300px;  top: var(--start-position); animation: moveDownVisibleHigh 14s linear infinite; }
+.loop-images .right .image-6 { left: 98%;  --start-position: 4000px;  top: var(--start-position); animation: moveDownVisibleMid 12s linear infinite; }
+.loop-images .right .image-7 { left: 78%;  --start-position: 4700px;  top: var(--start-position); animation: moveDownVisibleLow 11s linear infinite; }
+.loop-images .right .image-8 { left: 85%;  --start-position: 5400px;  top: var(--start-position); animation: moveDownVisibleHigh 13s linear infinite; }
 
  .cupid-arrow {
    position: fixed;
@@ -589,7 +596,7 @@ line-height: normal;
    }
 }
 
- .card {
+ /*.card {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -632,7 +639,7 @@ line-height: normal;
    transform: scale(1);
    opacity: 1; 
    visibility: visible;
-}
+}*/
 
 
 
@@ -673,7 +680,7 @@ line-height: normal;
    }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
    .networks a:not(:last-child) {
       margin-right: 13px;
    }
