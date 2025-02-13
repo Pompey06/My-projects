@@ -41,6 +41,8 @@ html {
 .networks {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 100000000000000 !important;
 }
 
 .networks a {
@@ -130,6 +132,7 @@ html {
   z-index: 100;
   padding: 0 20px;
   transition: all 0.5s ease;
+  z-index: 100000000000000 !important;
 }
 
 .header .networks:first-child {
@@ -147,7 +150,7 @@ html {
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-top: -50px;
+   margin-top: -30px;
    position: relative;
    z-index: 100;
 }
@@ -284,7 +287,7 @@ line-height: normal;
 }
 
 .arrow.flying {
-   animation: fly var(--flight-duration) cubic-bezier(0.45, 0, 0.55, 1) forwards;
+   animation: fly var(--flight-duration) linear forwards;
 }
 
 .arrow.right-side {
@@ -298,13 +301,21 @@ line-height: normal;
 @keyframes fly {
    0% {
        opacity: 1;
+       transform: translate(var(--start-x), var(--start-y)) rotate(var(--rotation));
+   }
+   100% {
+       opacity: 1;
+       transform: translate(var(--end-x), var(--end-y)) rotate(var(--rotation));
+   }
+}
+
+@keyframes flyParabolic {
+   0% {
+       opacity: 1;
        transform: translate(var(--start-x), var(--start-y)) rotate(var(--start-rotation));
    }
-   25% {
-       transform: translate(var(--point1-x), var(--point1-y)) rotate(var(--mid-rotation));
-   }
-   75% {
-       transform: translate(var(--point2-x), var(--point2-y)) rotate(var(--mid-rotation));
+   50% {
+       transform: translate(var(--mid-x), var(--mid-y)) rotate(var(--mid-rotation));
    }
    100% {
        opacity: 1;
@@ -834,7 +845,7 @@ text-align: center;
       width: 50px;
    }
    .info {
-      margin-top: 0;
+      margin-top: 10px;
    }
    .section__shrek {
       width: 200vw;
@@ -854,7 +865,7 @@ text-align: center;
 
    @media (max-width: 400px) {
       .networks img {
-         width: 30px;
+         width: 45px;
       }
       .arrow {
          width: 80px;

@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
    const title = document.querySelector(".title");
 
    function calculateMaxMove() {
-      // Если ширина экрана меньше или равна 600px, возвращаем 0
       if (window.innerWidth <= 600) {
          return 0;
       }
@@ -13,54 +12,36 @@ document.addEventListener("DOMContentLoaded", function () {
       const headerWidth = header.offsetWidth;
       const leftNetworkWidth = leftNetwork.offsetWidth;
       const rightNetworkWidth = rightNetwork.offsetWidth;
-      const targetGap = 60; // Желаемое расстояние между элементами
 
-      // Текущее расстояние между элементами
+      // Определяем желаемое расстояние между networks
+      const targetGap = window.innerWidth <= 800 ? 13 : 60;
+
+      // Вычисляем текущее расстояние между networks
       const currentGap = headerWidth - (leftNetworkWidth + rightNetworkWidth);
 
-      // Рассчитываем, насколько нужно сдвинуть каждый элемент
-      // (текущий отступ - целевой отступ) / 2, так как движение с обеих сторон
-      return Math.max((currentGap - targetGap) / 2, 0);
+      // Вычисляем на сколько нужно сдвинуть каждый блок
+      const moveDistance = (currentGap - targetGap) / 2;
+
+      return Math.max(moveDistance, 0);
    }
 
    function handleScroll() {
-      // Если ширина экрана меньше или равна 600px, отменяем анимацию
       if (window.innerWidth <= 600) {
          leftNetwork.style.transform = `translateX(0)`;
          rightNetwork.style.transform = `translateX(0)`;
          return;
       }
 
-      const documentHeight = Math.max(
-         document.body.scrollHeight,
-         document.body.offsetHeight,
-         document.documentElement.clientHeight,
-         document.documentElement.scrollHeight,
-         document.documentElement.offsetHeight
-      );
-      const windowHeight = window.innerHeight;
-      const scrollable = documentHeight - windowHeight;
-
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       const titleBottom = title.getBoundingClientRect().bottom;
+      const maxMove = calculateMaxMove();
 
       if (titleBottom > 0) {
          leftNetwork.style.transform = `translateX(0)`;
          rightNetwork.style.transform = `translateX(0)`;
-         return;
+      } else {
+         leftNetwork.style.transform = `translateX(${maxMove}px)`;
+         rightNetwork.style.transform = `translateX(-${maxMove}px)`;
       }
-
-      const scrollProgress = Math.min(currentScroll / (scrollable * 0.7), 1);
-      const eased = easeInOutQuad(scrollProgress);
-      const maxMove = calculateMaxMove();
-      const moveDistance = maxMove * eased;
-
-      leftNetwork.style.transform = `translateX(${moveDistance}px)`;
-      rightNetwork.style.transform = `translateX(-${moveDistance}px)`;
-   }
-
-   function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
    }
 
    const resizeObserver = new ResizeObserver(() => {
@@ -82,47 +63,37 @@ function createArrow() {
 
    const side = Math.random() > 0.5 ? "left" : "right";
    const startX = side === "left" ? -100 : window.innerWidth + 100;
-
-   // Более случайная начальная высота
    const startY = random(window.innerHeight * 0.1, window.innerHeight * 0.9);
    const endX = side === "left" ? window.innerWidth + 100 : -100;
-
-   // Случайная конечная высота, независимая от начальной
    const endY = random(window.innerHeight * 0.1, window.innerHeight * 0.9);
 
-   const distance = Math.abs(endX - startX);
+   // Длительность полета от 3 до 4.5 секунд
+   const flightDuration = random(3000, 4500) + "ms";
 
-   // Более случайные контрольные точки
-   const point1X = startX + distance * random(0.2, 0.4);
-   const point2X = startX + distance * random(0.6, 0.8);
+   if (side === "right") {
+      // Параболическая траектория для стрел справа
+      const distance = Math.abs(endX - startX);
+      const midX = startX + distance * 0.5;
+      const baseHeight = Math.min(startY, endY);
+      const maxHeight = baseHeight - random(100, 300);
 
-   // Более разнообразная высота параболы
-   const baseHeight = Math.min(startY, endY);
-   const maxHeight = baseHeight - random(100, 400);
-   const point1Y = maxHeight + random(-50, 50);
-   const point2Y = maxHeight + random(-50, 50);
-
-   // Более разнообразные углы поворота
-   const startRotation = side === "left" ? `${random(40, 50)}deg` : `${random(-140, -130)}deg`;
-   const midRotation = side === "left" ? `${random(25, 35)}deg` : `${random(-155, -145)}deg`;
-   const endRotation = side === "left" ? `${random(40, 50)}deg` : `${random(-140, -130)}deg`;
-
-   // Длительность полета от 2 до 4 секунд
-   const flightDuration = random(2000, 4000) + "ms";
+      arrow.style.animation = "flyParabolic var(--flight-duration) cubic-bezier(0.45, 0, 0.55, 1) forwards";
+      arrow.style.setProperty("--mid-x", `${midX}px`);
+      arrow.style.setProperty("--mid-y", `${maxHeight}px`);
+      arrow.style.setProperty("--start-rotation", "-135deg");
+      arrow.style.setProperty("--mid-rotation", "-150deg");
+      arrow.style.setProperty("--end-rotation", "-135deg");
+   } else {
+      // Прямая траектория для стрел слева
+      arrow.style.setProperty("--rotation", "45deg");
+   }
 
    arrow.classList.add(side === "left" ? "left-side" : "right-side");
    arrow.style.setProperty("--flight-duration", flightDuration);
    arrow.style.setProperty("--start-x", `${startX}px`);
    arrow.style.setProperty("--start-y", `${startY}px`);
-   arrow.style.setProperty("--point1-x", `${point1X}px`);
-   arrow.style.setProperty("--point1-y", `${point1Y}px`);
-   arrow.style.setProperty("--point2-x", `${point2X}px`);
-   arrow.style.setProperty("--point2-y", `${point2Y}px`);
    arrow.style.setProperty("--end-x", `${endX}px`);
    arrow.style.setProperty("--end-y", `${endY}px`);
-   arrow.style.setProperty("--start-rotation", startRotation);
-   arrow.style.setProperty("--mid-rotation", midRotation);
-   arrow.style.setProperty("--end-rotation", endRotation);
 
    document.getElementById("arrowContainer").appendChild(arrow);
    arrow.classList.add("flying");
@@ -138,7 +109,7 @@ function launchArrows() {
    for (let i = 0; i < arrowCount; i++) {
       setTimeout(() => {
          createArrow();
-      }, i * random(300, 600));
+      }, i * random(400, 800));
    }
 }
 
