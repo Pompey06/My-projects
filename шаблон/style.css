@@ -25,18 +25,17 @@
 .networks {
   display: flex;
   align-items: center;
+  gap: 24px;
 }
 
 .networks a {
   display: block;
 }
 
-.networks a:not(:last-child) {
-  margin-right: 24px;
-}
 
 .ca {
    word-wrap: break-word;
+   word-break: break-all;
    max-width: 100%;
 }
 

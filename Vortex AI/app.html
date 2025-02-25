@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Vortex AI</title>
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./app.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/app__bg.png" alt="" class="bg hide-450" />
+         <div class="content _container">
+            <div class="header">
+               <a href="index.html"><img src="./image/logo.svg" alt="" class="logo _scale_hover" /></a>
+               <div class="header__right">
+                  <div class="networks">
+                     <a href="#" class="_scale_hover">
+                        <img src="./image/tg.svg" alt="" />
+                     </a>
+                     <a href="#" class="_scale_hover">
+                        <img src="./image/x.svg" alt="" />
+                     </a>
+                     <a href="#" class="_scale_hover">
+                        <img src="./image/screen.svg" alt="" />
+                     </a>
+                     <a href="#" class="_scale_hover">
+                        <img src="./image/tools.svg" alt="" />
+                     </a>
+                  </div>
+                  <div data-copy class="ca">CA: 00000000000000</div>
+               </div>
+            </div>
+            <h1 class="title">Vortex AI</h1>
+            <div class="chat start">
+               <div class="prompt">
+                  <img src="./image/prompt.svg" alt="" />
+                  Prompt
+               </div>
+               <div class="info__start">
+                  <input type="text" placeholder="a cyberpunk dystopia with a sprawling, rain-soaked cityscape|" />
+                  <a href="#" class="info_started_icon">
+                     <img src="./image/generate.svg" class="_scale_hover" alt="" />
+                  </a>
+               </div>
+               <p class="chat__text">
+                  Text prompt for video generation. Camera movement instructions can be added using square brackets
+                  (e.g. [Pan left] or [Zoom in]). You can use up to 3 combined movements per prompt. Supported
+                  movements: Truck left/right, Pan left/right, Push in/Pull out, Pedestal up/down, Tilt up/down, Zoom
+                  in/out, Shake, Tracking shot, Static shot. For example: [Truck left, Pan right, Zoom in]
+               </p>
+            </div>
+            <div class="chat none loader">
+               <div class="wait">
+                  <img src="./image/wait.svg" alt="" />
+                  Please wait
+               </div>
+               <div class="loading">
+                  <img src="./image/loader__bg.svg" alt="" />
+                  <span class="generating">Generating</span>
+               </div>
+               <p class="minutes">usually takes 2-3 minutes</p>
+            </div>
+            <div class="chat none result">
+               <div class="result__text">
+                  <img src="./image/result.svg" alt="" />
+                  Result
+               </div>
+               <video controls src="" class="result__video"></video>
+               <img src="./image/download.svg" alt="" class="download _scale_hover" />
+            </div>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <!-- <div class="loop-images">
+    <div class="left">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+    <div class="right">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+  </div> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+      <script src="./app.js"></script>
+   </body>
+</html>

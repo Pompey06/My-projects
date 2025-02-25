@@ -1,0 +1,138 @@
+.about-swiper {
+   height: 310px;
+   position: relative;
+}
+
+.about-swiper-wrapper {
+   position: relative; /* Для корректного абсолютного позиционирования пагинации */
+}
+
+.custom-pagination {
+   right: -30px !important;
+   left: auto !important;
+   width: auto !important;
+}
+.custom-pagination .swiper-pagination-bullet {
+   width: 12px;
+   height: 12px;
+   display: block !important;
+   margin: 8px 0 !important;
+   background: #fff;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+   border-radius: 30px;
+   background: #9795ff;
+   height: 22px;
+}
+
+/* Контейнер слайдера */
+.how__cards {
+   position: relative;
+   width: 100vw;
+   /* Дополнительно можно задать нужную высоту */
+}
+
+/* Центрирование активного слайда и ограничение его ширины */
+.swiper-slide-active .how__card {
+   max-width: 676px !important;
+   margin: 0 auto;
+}
+
+.how__card {
+   max-width: 676px !important;
+}
+
+/* Стили для кастомных стрелок */
+.how__cards .left,
+.how__cards .right {
+   position: absolute;
+   top: 50%;
+   z-index: 10;
+}
+
+.how__card {
+   width: auto;
+}
+
+/* Левая стрелка: позиция слева от центра активного слайда */
+.how__cards .left {
+   left: calc(50% - 373px);
+   transform: translate(-100%, -50%);
+}
+
+/* Правая стрелка: позиция справа от центра активного слайда */
+.how__cards .right {
+   left: calc(50% + 373px);
+   transform: translate(0, -50%);
+}
+
+/* При необходимости можно задать размеры и отступы для изображений стрелок */
+.how__cards img.left,
+.how__cards img.right {
+   cursor: pointer;
+   /* width: 24px; height: 24px; – задайте нужный размер */
+}
+
+@media (max-width: 1100px) {
+   .about__card {
+      max-width: 92vw;
+   }
+}
+
+@media (max-width: 1000px) {
+   .how__cards .left {
+      left: 20px;
+      transform: translate(0, -50%);
+      width: 50px;
+   }
+   .how__cards .right {
+      right: 20px;
+      left: auto;
+      transform: translate(0, -50%);
+      width: 50px;
+   }
+}
+
+@media (max-width: 900px) {
+   .how__card {
+      width: calc(100vw - 160px);
+   }
+}
+@media (max-width: 800px) {
+   .custom-pagination {
+      right: 10px !important;
+   }
+}
+
+@media (max-width: 700px) {
+   .how__card_title {
+      font-size: 24px;
+   }
+   .how__card_text {
+      font-size: 16px;
+   }
+   .optional {
+      font-size: 14px;
+   }
+}
+
+@media (max-width: 500px) {
+   .how__card {
+      gap: 12px;
+      width: 80vw;
+   }
+   .number {
+      font-size: 24px;
+      padding: 15px 20px;
+   }
+   .how__cards .left {
+      left: 0;
+      transform: translate(0, -50%);
+   }
+   .how__cards .right {
+      right: 0;
+      left: auto;
+      transform: translate(0, -50%);
+   }
+}

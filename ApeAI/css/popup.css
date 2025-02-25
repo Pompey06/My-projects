@@ -1,0 +1,66 @@
+.chat-overlay {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 26, 37, 0.10);
+  backdrop-filter: blur(25px);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 32px 0;
+}
+
+.chat-overlay.active {
+  display: flex !important;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.chat {
+  align-items: center;
+  gap: 24px;
+  background-size: cover;
+  max-width: 327px;
+  max-height: 244px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  transform: scale(0.9);
+  /* Начальное состояние для анимации */
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  /* Включаем вертикальную прокрутку */
+  overflow-x: hidden;
+  /* Убираем горизонтальную прокрутку */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Тень для красоты */
+  border-radius: 26px;
+  border: 1px solid rgba(240, 240, 250, 0.20);
+  background: #272731;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+
+.cancel {
+  background: linear-gradient(94deg, #9DC44D 24.67%, #A1C64C 52.44%, #ADCB49 80.14%, #C1D344 107.71%, #D7DD3F 130.21%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 26px;
+  border: 1px solid #9DC44D;
+  padding: 8px 18px;
+}

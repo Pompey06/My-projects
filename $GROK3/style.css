@@ -1,0 +1,556 @@
+/*@font-face {
+   font-family: 'arco_cyrillicregular';
+   src: url('./fonts/rco-cyrillic-webfont.woff2') format('woff2'),
+        url('./fonts/arco-cyrillic-webfont.woff') format('woff'),
+        url('./fonts/arco-cyrillic.otf') format('opentype'), 
+        url('./fonts/arco-cyrillic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}*/
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-Light.eot');
+   src: local('Proto Mono Light'), local('ProtoMono-Light'),
+       url('./fonts/ProtoMono-Light.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-Light.woff2') format('woff2'),
+       url('./fonts/ProtoMono-Light.woff') format('woff'),
+       url('./fonts/ProtoMono-Light.ttf') format('truetype');
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-SemiBoldShadow.eot');
+   src: local('Proto Mono Semi Bold Shadow'), local('ProtoMono-SemiBoldShadow'),
+       url('./fonts/ProtoMono-SemiBoldShadow.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-SemiBoldShadow.woff2') format('woff2'),
+       url('./fonts/ProtoMono-SemiBoldShadow.woff') format('woff'),
+       url('./fonts/ProtoMono-SemiBoldShadow.ttf') format('truetype');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-LightShadow.eot');
+   src: local('Proto Mono Light Shadow'), local('ProtoMono-LightShadow'),
+       url('./fonts/ProtoMono-LightShadow.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-LightShadow.woff2') format('woff2'),
+       url('./fonts/ProtoMono-LightShadow.woff') format('woff'),
+       url('./fonts/ProtoMono-LightShadow.ttf') format('truetype');
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-RegularShadow.eot');
+   src: local('Proto Mono Regular Shadow'), local('ProtoMono-RegularShadow'),
+       url('./fonts/ProtoMono-RegularShadow.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-RegularShadow.woff2') format('woff2'),
+       url('./fonts/ProtoMono-RegularShadow.woff') format('woff'),
+       url('./fonts/ProtoMono-RegularShadow.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-Regular.eot');
+   src: local('Proto Mono Regular'), local('ProtoMono-Regular'),
+       url('./fonts/ProtoMono-Regular.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-Regular.woff2') format('woff2'),
+       url('./fonts/ProtoMono-Regular.woff') format('woff'),
+       url('./fonts/ProtoMono-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-MediumShadow.eot');
+   src: local('Proto Mono Medium Shadow'), local('ProtoMono-MediumShadow'),
+       url('./fonts/ProtoMono-MediumShadow.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-MediumShadow.woff2') format('woff2'),
+       url('./fonts/ProtoMono-MediumShadow.woff') format('woff'),
+       url('./fonts/ProtoMono-MediumShadow.ttf') format('truetype');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-SemiBold.eot');
+   src: local('Proto Mono Semi Bold'), local('ProtoMono-SemiBold'),
+       url('./fonts/ProtoMono-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-SemiBold.woff2') format('woff2'),
+       url('./fonts/ProtoMono-SemiBold.woff') format('woff'),
+       url('./fonts/ProtoMono-SemiBold.ttf') format('truetype');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Proto Mono';
+   src: url('./fonts/ProtoMono-Medium.eot');
+   src: local('Proto Mono Medium'), local('ProtoMono-Medium'),
+       url('./fonts/ProtoMono-Medium.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ProtoMono-Medium.woff2') format('woff2'),
+       url('./fonts/ProtoMono-Medium.woff') format('woff'),
+       url('./fonts/ProtoMono-Medium.ttf') format('truetype');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+
+
+
+* {
+   font-family: "Proto Mono", serif !important;
+   color: #FFF;
+}
+
+._scale_hover {
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+._scale_hover:hover {
+  transform: scale(1.1);
+}
+
+.networks {
+  display: flex;
+  align-items: center;
+}
+
+.networks a {
+  display: block;
+}
+
+.networks a:not(:last-child) {
+  margin-right: 32px;
+}
+
+.ca {
+   word-wrap: break-word;
+   max-width: 100%;
+}
+
+._container {
+  max-width: 1700px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.bg__wrap {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+.copied_modal {
+  position: fixed;
+  top: 50%;
+  color: #000;
+  left: 50%;
+  z-index: 100;
+  background: #fff;
+  font-family: "Knewave", system-ui;
+  padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+   padding-top: 81px;
+   padding-bottom: 40px;
+   position: relative;
+   z-index: 100;
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   gap: 32px;
+   align-self: flex-end;
+}
+
+.ca {
+   color: #FFF;
+text-align: center;
+font-family: "Proto Mono";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.36px;
+padding: 14px 27px;
+border-radius: 37px;
+border: 1px solid #FFF;
+}
+
+.musk {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+}
+
+.info {
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+}
+
+
+.title {
+   color: #FFF;
+text-align: center;
+font-family: "Proto Mono";
+font-size: 224.142px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -24.656px;
+}
+
+.wrap {
+   display: flex;
+   align-items: center;
+   gap: 28px;
+}
+
+.text {
+   color: #FFF;
+text-align: right;
+font-family: "Proto Mono";
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -3.08px;
+max-width: 700px;
+margin-bottom: 27px;
+}
+
+.bottom {
+   padding-top: 200px;
+   display: flex;
+   gap: 80px;
+}
+
+.ai {
+   align-self: flex-end;
+}
+
+
+@media (max-width: 1024px) {
+   .title {
+      font-size: 160px;
+   }
+   .logo {
+      width: 140px;
+   }
+}
+
+@media (max-width: 768px) {
+   .musk {
+      left: -50%;
+   }
+   .content {
+      align-items: center;
+   }
+   .wrap {
+      flex-direction: column;
+      gap: 0px;
+      margin-top: 10px;
+   }
+   .title {
+      line-height: 0.9;
+   }
+   .info {
+      align-items: center;
+   }
+   .text {
+      text-align: center;
+   }
+}
+
+@media (max-width: 600px) {
+   .header {
+      flex-direction: column;
+      align-self: center;
+      gap: 20px;
+   }
+   .title {
+      font-size: 100px;
+      letter-spacing: 0px;
+   }
+   .content {
+      padding-top: 20px;
+   }
+   .text {
+      font-size: 20px;
+   }
+   .bottom {
+      padding-top: 40px;
+      gap: 10px;
+   }
+   .musk {
+      width: 700px;
+   }
+}
+
+@media (max-width: 420px) {
+   .musk {
+      width: 500px;
+   }
+   .ai {
+      width: 200px;
+   }
+   .text {
+      font-size: 16px;
+      margin-bottom: 15px;
+      margin-top: 7px;
+   }
+   .title {
+      font-size: 80px;
+      margin-top: 5px;
+   }
+   .logo {
+      width: 70px;
+   }
+   .ca {
+      padding: 7px 15px;
+      font-size: 18px;
+   }
+   .networks a:not(:last-child) {
+      margin-right: 15px;
+   }
+   .bottom {
+      gap: 0;
+   }
+   .networks img {
+      width: 40px;
+   }
+   .content {
+      padding-bottom: 20px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+[data-anim-on-scroll] {
+  transition: all 0.4s ease 0s;
+  opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+  opacity: 1;
+}
+
+._right_anim_tr {
+  transform: translateX(200%);
+}
+
+._left_anim_tr {
+  transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+  transform: translateX(0%);
+}
+
+
+._bottom_anim_tr {
+  transform: translateY(200%);
+}
+
+._top_anim_tr {
+  transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+  transform: translateY(0%);
+}
+
+._scale_anim {
+  transform: scale(0);
+}
+
+._scale_anim._animate {
+  transform: scale(1);
+}
+
+.anim {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+
+
+/*.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+   transform: translateX(-200%);
+}
+
+.card-right {
+   transform: translateX(200%);
+}
+
+.card._animate {
+   transform: translateX(0%);
+}
+
+.card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq {
+   transform: scale(0);
+   opacity: 0;
+   visibility: hidden; 
+   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uniq:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq._animate {
+   transform: scale(1);
+   opacity: 1; 
+   visibility: visible;
+}*/

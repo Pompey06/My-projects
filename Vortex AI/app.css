@@ -1,0 +1,426 @@
+@font-face {
+   font-family: "Satoshi";
+   src: url("./fonts/Satoshi-Medium.woff2") format("woff2"), url("./fonts/Satoshi-Medium.woff") format("woff"),
+      url("./fonts/Satoshi-Medium.ttf") format("truetype");
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Satoshi";
+   src: url("./fonts/Satoshi-Light.woff2") format("woff2"), url("./fonts/Satoshi-Light.woff") format("woff"),
+      url("./fonts/Satoshi-Light.ttf") format("truetype");
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Satoshi";
+   src: url("./fonts/Satoshi-Bold.woff2") format("woff2"), url("./fonts/Satoshi-Bold.woff") format("woff"),
+      url("./fonts/Satoshi-Bold.ttf") format("truetype");
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Satoshi";
+   src: url("./fonts/Satoshi-Black.woff2") format("woff2"), url("./fonts/Satoshi-Black.woff") format("woff"),
+      url("./fonts/Satoshi-Black.ttf") format("truetype");
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Satoshi";
+   src: url("./fonts/Satoshi-Regular.woff2") format("woff2"), url("./fonts/Satoshi-Regular.woff") format("woff"),
+      url("./fonts/Satoshi-Regular.ttf") format("truetype");
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+* {
+   font-family: "Satoshi", serif !important;
+   color: #fff;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+._scale_hover {
+   transition: all 0.4s ease 0s;
+   cursor: pointer;
+}
+
+._scale_hover:hover {
+   transform: scale(1.1);
+}
+
+.networks {
+   display: flex;
+   align-items: center;
+   gap: 26px;
+}
+
+.networks a {
+   display: block;
+}
+
+.ca {
+   word-wrap: break-word;
+   word-break: break-all;
+   max-width: 100%;
+}
+
+._container {
+   max-width: 1600px;
+   padding: 0 20px;
+   margin: 0 auto;
+}
+
+.wrapper {
+   position: relative;
+   overflow: hidden;
+   min-height: 100%;
+}
+
+.bg__wrap {
+   position: relative;
+}
+
+.bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+[data-copy] {
+   cursor: pointer;
+}
+
+.copied_modal {
+   position: fixed;
+   top: 50%;
+   color: #000;
+   left: 50%;
+   z-index: 100;
+   background: #fff;
+   font-family: "Knewave", system-ui;
+   padding: 10px 30px;
+   white-space: nowrap;
+   border-radius: 20px;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+   opacity: 1;
+   visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   position: relative;
+   margin-bottom: 55px;
+}
+
+.header__right {
+   display: flex;
+   align-items: center;
+   gap: 48px;
+}
+
+.ca {
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   padding: 18px 48px;
+   border-radius: 24px;
+   background: linear-gradient(246deg, rgba(0, 0, 0, 0) 34.36%, rgba(133, 76, 255, 0.2) 90.29%), #151515;
+   box-shadow: 0px 0px 56.6px 0px #151124;
+   backdrop-filter: blur(15px);
+}
+
+.title {
+   text-align: center;
+   font-family: Satoshi;
+   font-size: 166.154px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 91.667%;
+   background: linear-gradient(91deg, #9795ff 1.74%, #fff 43.71%, #fff 61.62%, #be9fff 102.48%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   margin-bottom: 48px;
+}
+
+.info__start {
+   border-radius: 103.72px;
+   border: 2.769px solid #504dff;
+   background: #26204e;
+   box-shadow: 0px 5.587px 252.274px 0px rgba(80, 77, 255, 0.54);
+   backdrop-filter: blur(64.8251724243164px);
+   padding: 20px;
+   padding-left: 38px;
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   width: 960px;
+}
+
+.info__start input {
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 22.154px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   opacity: 0.5;
+   background: transparent;
+   border: none;
+   width: 100%;
+}
+
+.chat {
+   border-radius: 24px;
+   background: rgb(23, 22, 25);
+   background: rgb(23, 22, 25);
+   background: linear-gradient(180deg, rgba(23, 22, 25, 1) 0%, rgba(31, 26, 43, 1) 50%, rgba(50, 35, 81, 1) 100%);
+   box-shadow: 0px 0px 56.6px 0px #151124;
+
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+   padding: 32px;
+}
+
+.prompt {
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1.16; /* 116.667% */
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.chat__text {
+   padding-top: 24px;
+   border-top: 1px solid rgba(255, 255, 255, 0.2);
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   opacity: 0.5;
+   max-width: 925px;
+}
+
+.none {
+   display: none;
+}
+
+.loader {
+   align-items: center;
+}
+
+.wait {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1.16; /* 116.667% */
+}
+
+.minutes {
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 28px; /* 116.667% */
+}
+
+.generating {
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 22.154px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   white-space: nowrap;
+}
+
+.generating::after {
+   content: ""; /* Пустое содержимое для точек */
+   display: inline-block;
+   animation: dots 2s infinite;
+}
+
+@keyframes dots {
+   0% {
+      content: ""; /* Без точек */
+   }
+   33% {
+      content: "."; /* Одна точка */
+   }
+   66% {
+      content: ".."; /* Две точки */
+   }
+   100% {
+      content: "..."; /* Три точки */
+   }
+}
+
+.result__text {
+   color: #fff;
+   font-family: Satoshi;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1.16; /* 116.667% */
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.result {
+   align-items: start;
+}
+
+.result__video {
+   max-width: 925px;
+   width: 100%;
+   height: 520px;
+   border-radius: 57px;
+   object-fit: cover;
+   margin: 0 auto;
+   display: block;
+   background: #000;
+}
+
+.loading {
+   position: relative;
+}
+
+@media (max-width: 1050px) {
+   .info__start {
+      max-width: 91vw;
+   }
+}
+
+@media (max-width: 768px) {
+   .header {
+      flex-direction: column;
+      gap: 10px;
+   }
+   .title {
+      font-size: 100px;
+   }
+   .chat__text {
+      font-size: 14px;
+   }
+   .info_started_icon img {
+      width: 240px;
+   }
+}
+
+@media (max-width: 500px) {
+   .header__right {
+      flex-direction: column;
+      gap: 15px;
+   }
+   .header {
+      margin-bottom: 30px;
+   }
+   .title {
+      font-size: 60px;
+      margin-bottom: 20px;
+   }
+   .ca {
+      padding: 12px 24px;
+   }
+   .info__start {
+      flex-direction: column;
+      padding: 12px;
+      border-radius: 48px;
+   }
+   .chat {
+      gap: 16px;
+   }
+   .loading img {
+      width: 150px;
+   }
+   .generating {
+      font-size: 18px;
+   }
+   .result {
+      padding: 12px;
+   }
+   .result__video {
+      height: 300px;
+   }
+}
+
+@media (max-width: 400px) {
+   .minutes,
+   .wait {
+      font-size: 18px;
+   }
+   .wait img {
+      width: 20px;
+   }
+   .result__video {
+      height: 200px;
+   }
+   .download {
+      width: 150px;
+   }
+   .result__text {
+      font-size: 18px;
+   }
+   .result__text img {
+      width: 20px;
+   }
+}
+
+._error {
+   outline: 2px solid red;
+}

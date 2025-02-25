@@ -1,0 +1,41 @@
+RewriteEngine On
+
+# Handle API requests
+RewriteCond %{REQUEST_URI} !^/api/metadata/
+RewriteRule ^api/(.*)$ api/$1.php [L,QSA]
+
+# Разрешаем доступ к API
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# Правила для API
+RewriteRule ^api/upload_metadata$ api/upload_metadata.php [L]
+
+# Правила для доступа к метаданным
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/metadata/(.*)$ api/metadata/$1 [L]
+
+# Разрешаем доступ к JSON файлам
+<FilesMatch "\.(json)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Content-Type application/json
+</FilesMatch>
+
+# Настройки для директории metadata
+<Directory "api/metadata">
+    Options +Indexes +FollowSymLinks
+    AllowOverride None
+    Require all granted
+    
+    Header set Access-Control-Allow-Origin "*"
+    Header set Content-Type application/json
+</Directory>
+
+# Защищаем директорию uploads
+<Directory "uploads">
+    Options -Indexes
+    AllowOverride None
+    Require all granted
+</Directory> 

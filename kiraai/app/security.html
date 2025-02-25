@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Kira AI Security</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./security.css?v1" />
+      <link rel="shortcut icon" href="../img/kira.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/app/bbg.png" alt class="bg" />
+         <div class="content _container">
+            <div class="header">
+               <img src="./image/lg.svg" alt class="logo" />
+               <div class="header__buttons">
+                  <a href="#" class="_scale_hover login">Login</a>
+                  <a href="#" class="_scale_hover sign"> Connect wallet </a>
+               </div>
+            </div>
+            <section class="security">
+               <div class="security__top">
+                  <div class="info">
+                     <h1 class="info__title">Kira AI <span>Security</span></h1>
+                     <p class="info__text">See Through the Hype and Navigate Crypto Safely</p>
+                     <ul class="info__list">
+                        <li><span>1</span> Search the contract address.</li>
+                        <li><span>2</span> Get real-time, AI-driven analysis on every token.</li>
+                        <li><span>3</span> Make your own informed decisions!</li>
+                     </ul>
+                  </div>
+                  <div class="scanner">
+                     <form action="#" class="scanner__form">
+                        <h3 class="scanner__title">Scan a Contract</h3>
+                        <input id="contract-address" placeholder="Refresh" type="text"  name="address"/>
+                        <select name="currency" class="hidden-select">
+                           <option value="sol" selected>Solana</option>
+
+                           <option value="bsc">BSC</option>
+                           <option value="eth">ETH</option>
+                           <option value="base">Base</option>
+                        </select>
+
+                        <!-- Кастомный селект -->
+                        <div class="custom-select-wrapper">
+                           <div class="custom-select">
+                              <div class="select-header">
+                                 <div class="my">
+                                    <img src="./image/sol.png" alt="ETH" class="select-icon" />
+                                    <span class="selected-option">Sol</span>
+                                 </div>
+                                 <div class="select-arrow"></div>
+                              </div>
+                              <ul class="select-options">
+                                 <li data-value="eth" class="option active">
+                                    <img src="./image/bsc.png" alt="BSC" class="option-icon" />
+                                    BSC
+                                 </li>
+                                 <li data-value="btc" class="option">
+                                    <img src="./image/app/eth-icon.svg" alt="ETH" class="option-icon" />
+                                    ETH
+                                 </li>
+                                 <li data-value="ltc" class="option">
+                                    <img src="./image/base.png" alt="Base" class="option-icon" />
+                                    Base
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="form__buttons">
+                           <button class="scan _scale_hover" id="scan-button">Scan</button>
+                           <button class="clear _scale_hover" id="clear-button">Clear</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="security__partners">
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/eth.svg" alt /></a>
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/binance.svg" alt /></a>
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/matic.svg" alt /></a>
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/base.svg" alt /></a>
+               </div>
+               <div class="scan__result">
+                  <div class="result__cards">
+                     <div class="result__card">
+                        <div class="result__card_top">
+                           <img src="./image/app/01.svg" alt class="result__card_logo" />
+                           <h3 class="result__card_title">SCAN METRICS</h3>
+                        </div>
+                        <div class="result__card_total">
+                           <div class="result__card_total_name">Total Scans</div>
+                           <div class="result__card_total_value">0 000 000</div>
+                        </div>
+                        <div class="result__card_last">
+                           <div class="result__card_last_name">Last 24 Hours</div>
+                           <div class="result__card_last_value">0 000 000</div>
+                        </div>
+                     </div>
+                     <div class="result__card">
+                        <div class="result__card_top">
+                           <img src="./image/app/02.svg" alt class="result__card_logo" />
+                           <h3 class="result__card_title">SCAM DETECTIONS</h3>
+                        </div>
+                        <div class="result__card_total">
+                           <div class="result__card_total_name">Total Scans</div>
+                           <div class="result__card_total_value">0 000 000</div>
+                        </div>
+                        <div class="result__card_last">
+                           <div class="result__card_last_name">Last 7 Days Scams</div>
+                           <div class="result__card_last_value">0 000 000</div>
+                        </div>
+                     </div>
+                     <div class="result__card">
+                        <div class="result__card_top">
+                           <img src="./image/app/03.svg" alt class="result__card_logo" />
+                           <h3 class="result__card_title">SCAN METRICS</h3>
+                        </div>
+                        <div class="result__card_total">
+                           <div class="result__card_total_name">Last 7 Days</div>
+                           <div class="result__card_total_value">0 000 000</div>
+                        </div>
+                        <div class="result__card_last">
+                           <div class="result__card_last_name">Last 24 Hours</div>
+                           <div class="result__card_last_value">0 000 000</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+      
+      <script src="./animation.js"></script>
+      <script src="../js/app.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+   </body>
+</html>

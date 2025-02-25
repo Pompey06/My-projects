@@ -1,0 +1,263 @@
+.spoller {
+   /* WRAP ONE SPOLLER */
+}
+
+.spollers {
+   gap: 18px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+}
+
+.title-spoller {
+   color: #000;
+   font-family: Jost;
+   font-size: 35px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 130%; /* 45.5px */
+}
+
+.spoller__wrap {
+   border-radius: 40px;
+   background: #fff5d6;
+   padding: 34px 45px;
+   padding-right: 19px;
+   width: 100%;
+
+   /* HEADER */
+   /* HEADER TITLE */
+   /*--------------------*/
+   /* HEADER ICON */
+   /* by default: plus with minus, but you can add class spoller__wrap_icon-cross to element with class spoller__wrap_icon you will get cross icon instead of minus */
+   /*---------OR---------*/
+   /* HEADER IMG */
+   /*--------------------*/
+   /* SPOLLER BODY */
+}
+
+.spoller__wrap_item {
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 18px;
+}
+
+.custome-li {
+   color: #000;
+   font-family: Jost;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 130%; /* 26px */
+   margin-top: 24px;
+}
+
+.spoller__wrap_icon {
+   width: 50px;
+   height: 50px;
+   min-width: 50px;
+   min-height: 50px;
+   border-radius: 100%;
+   position: relative;
+   transform: rotate(0deg);
+   transition: all 0.3s ease 0s;
+   /*-----------------*/
+   /* NOACTIVE PLUS */
+   /*-----------------*/
+   /* NOACTIVE ARROW */
+   /* noactive - BOTTOM */
+   /* noactive - RIGHT */
+}
+
+.spoller__wrap_icon-plus span {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: block;
+   width: 30px;
+   height: 4px;
+   border-radius: 2px;
+   background-color: #000;
+   transition: all 0.3s ease 0s;
+}
+
+.spoller__wrap_icon-plus span::before {
+   content: "";
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 30px;
+   transform: translate(-50%, -50%) rotate(90deg);
+   height: 4px;
+   border-radius: 2px;
+   background-color: #000;
+   transition: all 0.3s ease 0s;
+}
+
+.spoller__wrap_icon-arrow-b-t {
+   position: relative;
+   cursor: pointer;
+   height: 30px;
+}
+
+.spoller__wrap_icon-arrow-r-cross {
+   position: relative;
+   cursor: pointer;
+   height: 30px;
+   transform: rotate(270deg);
+}
+
+.spoller__wrap_icon-arrow-left {
+   position: absolute;
+   background-color: transparent;
+   top: 50%;
+   left: 0;
+   width: 25px;
+   height: 4px;
+   display: block;
+   border-radius: 2px;
+   transform: translateY(-50%) rotate(45deg);
+   transition: all 0.3s ease 0s;
+}
+
+.spoller__wrap_icon-arrow-left:before {
+   content: "";
+   background-color: #000;
+   width: 25px;
+   height: 4px;
+   display: block;
+   border-radius: 10px;
+   transition: all 0.3s ease 0s;
+}
+
+.spoller__wrap_icon-arrow-right {
+   position: absolute;
+   background-color: transparent;
+   top: 50%;
+   left: 15px;
+   width: 25px;
+   height: 4px;
+   display: block;
+   border-radius: 2px;
+   transform: translateY(-50%) rotate(-45deg);
+   transition: all 0.3s ease 0s;
+}
+
+.spoller__wrap_icon-arrow-right:before {
+   content: "";
+   background-color: #000;
+   width: 25px;
+   height: 4px;
+   display: block;
+   border-radius: 10px;
+   transition: all 0.3s ease 0s;
+}
+
+.spoller__wrap_img-active {
+   display: none;
+}
+
+.spoller__wrap_img-active img {
+   object-fit: contain;
+}
+
+.spoller__wrap_img-noactive {
+   display: block;
+}
+
+.spoller__wrap_img-noactive img {
+   object-fit: contain;
+}
+
+/*-----------------*/
+/* ACTIVE SPOLLER */
+.spoller__wrap_item._active {
+   /* ICON */
+   /*---------OR---------*/
+   /* IMG */
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon {
+   /* ACTIVE MINUS ICON */
+   /* ACTIVE CROSS ICON */
+   /* ACTIVE ARROW TOP */
+   /* ACTIVE CROSS AFTER ARROW */
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-minus span::before {
+   transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-cross span {
+   transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-cross span::before {
+   transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-b-t .spoller__wrap_icon-arrow-left:before {
+   transform: rotate(-90deg);
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-b-t .spoller__wrap_icon-arrow-right:before {
+   transform: rotate(90deg);
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-r-cross .spoller__wrap_icon-arrow-left,
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-b-cross .spoller__wrap_icon-arrow-left {
+   width: 30px;
+   transform: translate(-50%, -50%) rotate(45deg);
+   left: 50%;
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-r-cross .spoller__wrap_icon-arrow-left:before,
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-b-cross .spoller__wrap_icon-arrow-left:before {
+   width: 30px;
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-r-cross .spoller__wrap_icon-arrow-right,
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-b-cross .spoller__wrap_icon-arrow-right {
+   width: 30px;
+   transform: translate(-50%, -50%) rotate(-45deg);
+   left: 50%;
+}
+
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-r-cross .spoller__wrap_icon-arrow-right:before,
+.spoller__wrap_item._active .spoller__wrap_icon-arrow-b-cross .spoller__wrap_icon-arrow-right:before {
+   width: 30px;
+}
+
+.spoller__wrap_item._active .spoller__wrap_img-active {
+   display: block;
+}
+
+.spoller__wrap_item._active .spoller__wrap_img-noactive {
+   display: none;
+}
+
+@media (max-width: 768px) {
+   .spoller__wrap {
+      padding: 20px;
+   }
+}
+
+@media (max-width: 500px) {
+   .title-spoller {
+      font-size: 20px;
+   }
+   .custome-li {
+      font-size: 18px;
+      margin-top: 12px;
+   }
+   .spoller__wrap_img-noactive img,
+   .spoller__wrap_img-active img {
+      width: 50px;
+      height: 50px;
+   }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>ApeAI</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./css/null.css" />
+      <link rel="stylesheet" href="./css/security.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/app/bg.png" alt="" class="bg" />
+         <div class="content _container">
+            <div class="header">
+               <img src="./image/app/logo.png" alt="" class="logo" />
+               <div class="header__buttons">
+                  <button class="appkit-button">Connect Wallet</button>
+                  <script>
+                     const appKitButtons = document.querySelectorAll(".appkit-button");
+                     window.addEventListener("addressChanged", (event) => {
+                        const address = event.detail.address;
+                        if (!address) return;
+                        appKitButtons.forEach((button) => {
+                           button.classList.add("appkit-button-disabled");
+                           button.textContent = event;
+                        });
+                     });
+                  </script>
+               </div>
+            </div>
+            <section class="security">
+               <div class="security__top">
+                  <div class="info">
+                     <h1 class="info__title">ApeAi Security</h1>
+                     <p class="info__text">See Through the Hype and Navigate Crypto Safely</p>
+                     <ul class="info__list">
+                        <li><span>1</span> Search the contract address.</li>
+                        <li><span>2</span> Get real-time, AI-driven analysis on every token.</li>
+                        <li><span>3</span> Make your own informed decisions!</li>
+                     </ul>
+                  </div>
+                  <div class="scanner">
+                     <form action="#" class="scanner__form">
+                        <h3 class="scanner__title">Scan a Contract</h3>
+                        <input placeholder="Refresh" name="address" type="text" />
+                        <select name="currency" class="hidden-select">
+                           <option value="sol" selected>Solana</option>
+                           <option value="eth">Base</option>
+                           <option value="bnb">BSC</option>
+                        </select>
+
+                        <!-- Кастомный селект -->
+                        <div class="custom-select-wrapper">
+                           <div class="custom-select">
+                              <div class="select-header">
+                                 <div class="my">
+                                    <img src="./image/solana.svg" alt="SOL" class="select-icon" />
+                                    <span class="selected-option">Solana</span>
+                                 </div>
+                                 <div class="select-arrow"></div>
+                              </div>
+                              <ul class="select-options">
+                                 <li data-value="sol" class="option active">
+                                    <img src="./image/solana.svg" alt="SOL" class="option-icon" />
+                                    Solana
+                                 </li>
+                                 <li data-value="eth" class="option">
+                                    <img src="./image/base.svg" alt="ETH" class="option-icon" />
+                                    Base
+                                 </li>
+                                 <li data-value="bnb" class="option">
+                                    <img src="./image/bsc.svg" alt="BNB" class="option-icon" />
+                                    BSC
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="form__buttons">
+                           <button class="scan _scale_hover" id="scan-button">Scan</button>
+                           <button class="clear _scale_hover" id="clear-button">Clear</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="security__partners">
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/eth.svg" alt="" /></a>
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/binance.svg" alt="" /></a>
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/matic.svg" alt="" /></a>
+                  <a href="#" class="security__partner _scale_hover"><img src="./image/app/base.svg" alt="" /></a>
+               </div>
+               <div class="scan__result">
+                  <div class="result__cards">
+                     <div class="result__card">
+                        <div class="result__card_top">
+                           <img src="./image/app/01.svg" alt="" class="result__card_logo" />
+                           <h3 class="result__card_title">SCAN METRICS</h3>
+                        </div>
+                        <div class="result__card_total">
+                           <div class="result__card_total_name">Total Scans</div>
+                           <div class="result__card_total_value">0 000 000</div>
+                        </div>
+                        <div class="result__card_last">
+                           <div class="result__card_last_name">Last 24 Hours</div>
+                           <div class="result__card_last_value">0 000 000</div>
+                        </div>
+                     </div>
+                     <div class="result__card">
+                        <div class="result__card_top">
+                           <img src="./image/app/02.svg" alt="" class="result__card_logo" />
+                           <h3 class="result__card_title">SCAM DETECTIONS</h3>
+                        </div>
+                        <div class="result__card_total">
+                           <div class="result__card_total_name">Total Scans</div>
+                           <div class="result__card_total_value">0 000 000</div>
+                        </div>
+                        <div class="result__card_last">
+                           <div class="result__card_last_name">Last 7 Days Scams</div>
+                           <div class="result__card_last_value">0 000 000</div>
+                        </div>
+                     </div>
+                     <div class="result__card">
+                        <div class="result__card_top">
+                           <img src="./image/app/03.svg" alt="" class="result__card_logo" />
+                           <h3 class="result__card_title">SCAN METRICS</h3>
+                        </div>
+                        <div class="result__card_total">
+                           <div class="result__card_total_name">Last 7 Days</div>
+                           <div class="result__card_total_value">0 000 000</div>
+                        </div>
+                        <div class="result__card_last">
+                           <div class="result__card_last_name">Last 24 Hours</div>
+                           <div class="result__card_last_value">0 000 000</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+            const hiddenSelect = document.querySelector(".hidden-select");
+            const customSelect = document.querySelector(".custom-select");
+            const header = customSelect.querySelector(".select-header");
+            const options = customSelect.querySelectorAll(".option");
+            const selectedOption = customSelect.querySelector(".selected-option");
+
+            // Открытие/закрытие кастомного списка
+            header.addEventListener("click", () => {
+               customSelect.classList.toggle("open");
+            });
+
+            // Выбор опции
+            options.forEach((option) => {
+               option.addEventListener("click", () => {
+                  // Удаляем активный класс у всех опций
+                  options.forEach((opt) => opt.classList.remove("active"));
+                  // Добавляем активный класс к выбранной опции
+                  option.classList.add("active");
+                  // Обновляем текст и иконку выбранной опции
+                  selectedOption.textContent = option.textContent;
+                  const icon = option.querySelector(".option-icon").src;
+                  customSelect.querySelector(".select-icon").src = icon;
+                  // Закрываем список
+                  customSelect.classList.remove("open");
+                  // Обновляем значение скрытого селекта
+                  hiddenSelect.value = option.dataset.value;
+               });
+            });
+
+            // Закрытие списка при клике вне его
+            document.addEventListener("click", (e) => {
+               if (!customSelect.contains(e.target)) {
+                  customSelect.classList.remove("open");
+               }
+            });
+         });
+      </script>
+      <script>
+         const clearButton = document.getElementById("clear-button");
+         const form = document.querySelector(".scanner__form");
+         const addressInput = document.querySelector("[name='address']");
+
+         clearButton.addEventListener("click", () => {
+            form.reset();
+            addressInput.classList.remove("_error");
+            const selectedOption = document.querySelector(".selected-option");
+            if (selectedOption) {
+               selectedOption.textContent = "SOL";
+            }
+
+            localStorage.removeItem("address");
+         });
+      </script>
+      <script>
+         const scanButton = document.querySelector(".scan");
+
+         scanButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            addressInput.classList.remove("_error");
+            const address = addressInput.value;
+
+            if (!address) {
+               addressInput.classList.add("_error");
+               return;
+            }
+
+            localStorage.setItem("address", addressInput.value);
+            window.location = "app.html";
+         });
+      </script>
+      <script src="./js/animation.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./js/copy.js"></script>
+      <script src="./js/app-kit.js" type="module" defer></script>
+   </body>
+</html>

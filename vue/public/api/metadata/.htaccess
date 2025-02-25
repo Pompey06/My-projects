@@ -1,0 +1,15 @@
+Options +Indexes +FollowSymLinks
+Header set Access-Control-Allow-Origin "*"
+Header set Content-Type application/json
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ - [L,R=404]
+</IfModule>
+
+<FilesMatch "\.json$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Content-Type application/json
+</FilesMatch> 

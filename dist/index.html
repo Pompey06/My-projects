@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>PnLAI</title>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <link rel="shortcut icon" href="./assets/ava-trQY2do4.png" />
+      <!-- <meta name="robots" content="noindex, nofollow"> -->
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="./assets/index-D4HXpDCs.js" type="module"></script>
+      <link rel="stylesheet" href="./assets/index-ongCQZbw.css" />
+   </head>
+
+   <body>
+      <div class="wrapper">
+         <main class="page">
+            <script>
+               const appData = {
+                  targetAddress: "", // 6LChaYRYtEYjLEHhzo4HdEmgNwu2aia8CM8VhR9wn6n7,
+                  previousAddress: "",
+                  walletData: {},
+                  loading: false,
+                  setScore(score) {
+                     setScore(score * 10);
+                  },
+                  formatPercentage(value) {
+                     if (typeof value !== "number") return "";
+                     return (value * 100).toFixed(2) + "%";
+                  },
+                  // Метод для форматирования сумм (например, баланс)
+                  formatCurrency(value, currency = "$") {
+                     if (typeof value !== "number") return "";
+                     // Пример: округление до 2 знаков после запятой
+                     return currency + Number(value).toFixed(2);
+                  },
+                  async fetchDegenStats() {
+                     this.loading = true;
+                     this.previousAddress = this.targetAddress;
+                     if (!this.targetAddress) return;
+                     const formData = new FormData();
+                     formData.append("address", this.targetAddress);
+                     try {
+                        const formData = new FormData();
+                        formData.append("address", this.targetAddress);
+                        // https://geo-ai.detect-ai.tech/
+                        const response = await fetch("https://degen.aiservice.ink/get_degen_stats.php", {
+                           method: "POST",
+                           body: formData,
+                        });
+                        const result = await response.json();
+
+                        if (result.error) {
+                           alert(result.error);
+                           return;
+                        }
+                        this.walletData = result;
+                        this.setScore(result.score);
+                     } catch (error) {
+                        console.error(error);
+                     } finally {
+                        this.loading = false;
+                     }
+                  },
+                  init() {
+                     this.setScore(this.walletData.score);
+                     console.log("init");
+                  },
+               };
+            </script>
+            <div class="" x-data="appData">
+               <div class="blur-wp" x-bind:class="{ '_active': loading || !walletData.address }" id="blur-wp">
+                  <div class="check__input">
+                     <div class="networks">
+                        <a href="#" class="_scale_hover">
+                           <img src="./assets/tg.png" alt="" />
+                        </a>
+                        <a href="#" class="_scale_hover">
+                           <img src="./assets/x.png" alt="" />
+                        </a>
+                        <a href="#" class="_scale_hover">
+                           <img src="./assets/screen.png" alt="" />
+                        </a>
+                        <a href="#" class="_scale_hover">
+                           <img src="./assets/tools.png" alt="" />
+                        </a>
+                     </div>
+                     <div class="construction__container _container">
+                        <img src="./assets/molot.png" alt="" class="molot" />
+                        <img src="./assets/dots.svg" alt="" class="dots" />
+                        <img src="./assets/construct.png" alt="" class="construction__img" />
+                     </div>
+                     <div data-copy class="ca">0X0000000000000000000000000000000</div>
+                  </div>
+
+                  <div class="check">
+                     <div class="check__container _container">
+                        <div class="check__wrapp">
+                           <div class="check__ca">
+                              <img x-if="walletData.avatar" :src="walletData.avatar" alt />
+                              <span x-text="walletData.address"></span>
+                           </div>
+                           <div class="check__block">
+                              <div class="check__first">
+                                 <div class="check__top">
+                                    <span>Last 7D PnL</span>
+                                    <span>Win Rate</span>
+                                 </div>
+                                 <div class="check__center">
+                                    <span x-text="(walletData.pnl_7d * 100).toFixed(2) + '%'"></span>
+                                    <span x-text="(walletData.winrate * 100).toFixed(2) + '%'"></span>
+                                 </div>
+                                 <div class="check__bottom">
+                                    <span>
+                                       <b x-text="'+$' + (walletData.realized_profit_7d/1000).toFixed(1) + 'K'"></b>
+                                    </span>
+                                    <span>
+                                       Bal:
+                                       <b x-text="parseFloat(walletData.sol_balance).toFixed(2) + ' SOL'"></b> (<span
+                                          x-text="'$' + (walletData.total_value/1000).toFixed(1) + 'K'"
+                                       ></span
+                                       >)
+                                    </span>
+                                 </div>
+                                 <div class="check__graph"><img src="./assets/Group-BKsrYe3H.svg" alt /></div>
+                              </div>
+                           </div>
+                           <div class="check__wp">
+                              <div class="check__item">
+                                 <div class="check__line">
+                                    <span>PnL</span>
+                                    <span
+                                       x-text="'7D TXs ' + walletData.buy_7d.toLocaleString() + ' / ' + walletData.sell_7d.toLocaleString()"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>Total PnL</span>
+                                    <span
+                                       x-text="'$' + Number(walletData.realized_profit/1000).toFixed(1) + 'K (' + (walletData.pnl * 100).toFixed(2) + '%)'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>Unrealized Profits</span>
+                                    <span x-text="'$' + Number(walletData.unrealized_profit).toFixed(2)"></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>7D Avg Duration</span>
+                                    <span
+                                       x-text="walletData.avg_holding_peroid ? (walletData.avg_holding_peroid / 60).toFixed(2) + ' min' : 'N/A'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>7D Total Cost</span>
+                                    <span
+                                       x-text="walletData.history_bought_cost ? (walletData.history_bought_cost >= 1000 ? '$' + (walletData.history_bought_cost / 1000).toFixed(2) + 'K' : '$' + Number(walletData.history_bought_cost).toFixed(2)) : 'N/A'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>7D Token Avg Cost</span>
+                                    <span
+                                       x-text="walletData.token_avg_cost ? '$' + Number(walletData.token_avg_cost).toFixed(2) : 'N/A'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>7D Token Avg Realized Profits</span>
+                                    <span
+                                       x-text="typeof walletData.token_sold_avg_profit === 'number' ? '+' + '$' + Number(walletData.token_sold_avg_profit).toFixed(2) : 'N/A'"
+                                    ></span>
+                                 </div>
+                              </div>
+                              <div class="check__item">
+                                 <div class="check__line"><span>Distribution (500)</span>-</div>
+                                 <div class="check__line">
+                                    <span>>500%</span>
+                                    <span
+                                       x-text="walletData.pnl_gt_5x_num + ' (' + ((walletData.pnl_gt_5x_num / walletData.token_num) * 100).toFixed(1) + '%)'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>200% ~ 500%</span>
+                                    <span
+                                       x-text="walletData.pnl_2x_5x_num + ' (' + ((walletData.pnl_2x_5x_num / walletData.token_num) * 100).toFixed(1) + '%)'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>0% ~ 200%</span>
+                                    <span
+                                       x-text="walletData.pnl_lt_2x_num + ' (' + ((walletData.pnl_lt_2x_num / walletData.token_num) * 100).toFixed(1) + '%)'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>0% ~ -50%</span>
+                                    <span
+                                       x-text="walletData.pnl_minus_dot5_0x_num + ' (' + ((walletData.pnl_minus_dot5_0x_num / walletData.token_num) * 100).toFixed(1) + '%)'"
+                                    ></span>
+                                 </div>
+                                 <div class="check__line">
+                                    <span>&lt;-50%</span>
+                                    <span
+                                       x-text="walletData.pnl_lt_minus_dot5_num + ' (' + ((walletData.pnl_lt_minus_dot5_num / walletData.token_num) * 100).toFixed(1) + '%)'"
+                                    ></span>
+                                 </div>
+                                 <div
+                                    class="check__range"
+                                    :style="{'--width': ((walletData.pnl_gt_5x_num + walletData.pnl_2x_5x_num + walletData.pnl_lt_2x_num) / walletData.token_num * 100) + '%'}"
+                                 >
+                                    <!-- in data-length we put percentage fill value without % sign -->
+                                    <span></span>
+                                    <span></span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+         <footer class="footer">
+            <div class="footer__container _container"></div>
+         </footer>
+      </div>
+      <div class="popup popup_popup">
+         <div class="popup__content">
+            <div class="popup__body">
+               <div class="popup__close"></div>
+            </div>
+         </div>
+      </div>
+      <div class="popup popup_massagename-message">
+         <div class="popup__content">
+            <div class="popup__body">
+               <div class="popup__close"></div>
+            </div>
+         </div>
+      </div>
+      <div class="popup popup_video">
+         <div class="popup__content">
+            <div class="popup__body">
+               <div class="popup__close popup__close_video"></div>
+               <div class="popup__video _video"></div>
+            </div>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+      <script src="js/vendors.min.js"></script>
+      <script src="js/app.min.js"></script>
+   </body>
+</html>

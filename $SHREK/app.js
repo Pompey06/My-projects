@@ -55,19 +55,38 @@ function random(min, max) {
    return Math.random() * (max - min) + min;
 }
 
+function getDocumentHeight() {
+   return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight
+   );
+}
+
 function createArrow() {
    const arrow = document.createElement("div");
    arrow.className = "arrow";
 
    const side = Math.random() > 0.5 ? "left" : "right";
-   // Увеличиваем отступ для старта и финиша на 300px
-   const startX = side === "left" ? -300 : window.innerWidth + 300;
-   const startY = random(window.innerHeight * 0.1, window.innerHeight * 0.9);
-   const endX = side === "left" ? window.innerWidth + 300 : -300;
-   const endY = random(window.innerHeight * 0.1, window.innerHeight * 0.9);
 
-   // Длительность полета от 3 до 4.5 секунд
-   const flightDuration = random(1500, 2500) + "ms";
+   // Базовая позиция по Y (начальная точка)
+   const baseY = random(0, getDocumentHeight());
+
+   // Ограничиваем вертикальное смещение для конечной точки
+   const maxVerticalOffset = random(100, 400);
+   const verticalDirection = Math.random() > 0.5 ? 1 : -1;
+
+   const startY = baseY;
+   const endY = baseY + verticalDirection * maxVerticalOffset;
+
+   // Стартовая и конечная позиция по X относительно ширины окна
+   const startX = side === "left" ? -300 : window.innerWidth + 300;
+   const endX = side === "left" ? window.innerWidth + 300 : -300;
+
+   const flightDuration = random(3000, 4500) + "ms";
 
    arrow.classList.add(side === "left" ? "left-side" : "right-side");
    arrow.style.setProperty("--flight-duration", flightDuration);
@@ -110,6 +129,11 @@ window.addEventListener("scroll", () => {
       launchArrows();
    }
 });
+
+window.addEventListener("resize", () => {
+   document.getElementById("arrowContainer").style.height = getDocumentHeight() + "px";
+});
+
 function updateHeartsContainer() {
    const pageHeight = document.documentElement.scrollHeight;
    const containers = document.querySelectorAll(".loop-images .left, .loop-images .center, .loop-images .right");

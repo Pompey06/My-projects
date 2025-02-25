@@ -1,0 +1,101 @@
+.tabs-block__block {
+   display: none;
+ }
+ 
+ .tabs-block__block._active {
+   display: block;
+   max-height: 500px;
+   overflow-y: auto;
+   
+   /* Стили для кастомного скролла */
+   scrollbar-width: thin; /* для Firefox */
+   scrollbar-color: #888 #f1f1f1; /* для Firefox */
+ }
+ 
+ /* Стили для WebKit (Chrome, Safari, новые версии Edge) */
+ .tabs-block__block._active::-webkit-scrollbar {
+   width: 6px;
+ }
+ 
+ .tabs-block__block._active::-webkit-scrollbar-track {
+   background: #f1f1f1;
+   border-radius: 3px;
+ }
+ 
+ .tabs-block__block._active::-webkit-scrollbar-thumb {
+   background: #888;
+   border-radius: 3px;
+ }
+ 
+ .tabs-block__block._active::-webkit-scrollbar-thumb:hover {
+   background: #555;
+ }
+
+/* WRAPPER TABS ITEMS */
+.tabs-block__nav {
+  display: flex;
+  border: 2px solid #FFF;
+  border-radius: 143px;
+  min-width: 300px;
+
+}
+
+/* TAB ITEM */
+.tabs-block__item {
+  cursor: pointer;
+  flex: 33.33% 1 1;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 11px 10px;
+  color: #FFF;
+font-family: Gantari;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.tabs-block__item:not(:last-child) {
+  margin-right: 0px;
+}
+
+.tabs-block__item:before {
+  content: '';
+  background: #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.tabs-block__item._active {
+  color: #000;
+  border-radius: 143px;
+
+background: #FFF;
+backdrop-filter: blur(72.8499984741211px);
+}
+
+.tabs-block__item._active:before {
+  content: '';
+  background: #fff;
+  border-radius: 143px;
+
+}
+
+/* TAB BODY */
+.tabs-block__body {
+  padding: 20px 0 0 0;
+}
+
+@media (max-width: 360px) {
+   .tabs-block__nav {
+      min-width: 240px;
+   }
+   .tabs-block__item {
+      padding: 11px 3px;
+   }
+}
