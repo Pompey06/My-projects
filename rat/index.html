@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Rat generator</title>
+      <link rel="icon" type="image/png" href="./image/favicon.ico" />
+      <link rel="stylesheet" href="./css/style.css" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Coiny&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+         rel="stylesheet"
+      />
+      <!-- SWIPER -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   </head>
+
+   <body>
+      <div class="page-wrap bg-wrap">
+         <div class="_container">
+            <div class="page__head">
+               <a href="" class="btn-border"> Back </a>
+               <div class="page__center">
+                  <h1 class="page__title">MEME MAKER</h1>
+                  <div class="page__sotials">
+                     <a href="" class="head-icon">
+                        <img src="./image/head-icon-1.svg" alt="" />
+                     </a>
+                     <a href="" class="head-icon">
+                        <img src="./image/head-icon-2.svg" alt="" />
+                     </a>
+                     <a href="" class="head-icon">
+                        <img src="./image/head-icon-3.svg" alt="" />
+                     </a>
+                     <a href="" class="head-icon">
+                        <img src="./image/head-icon-4.svg" alt="" />
+                     </a>
+                  </div>
+               </div>
+               <a href="" class="btn-border btn-white"> Buy here </a>
+            </div>
+            <div class="generator__section">
+               <div class="generator__wrap">
+                  <div class="bg-wrap wrap__big-ice">
+                     <div data-generator-photo>
+                        <img data-choose-preview="background" class="bg bg-contain" style="z-index: 1" />
+                        <img data-choose-preview="back-accessory" class="bg bg-contain" style="z-index: 2" />
+                        <img src="./image/rat-image-new.png" class="bg" style="z-index: 10" />
+                        <img data-choose-preview="outfit" class="bg" style="z-index: 11" />
+                        <img data-choose-preview="face" class="bg bg-contain" style="z-index: 12" />
+                        <img data-choose-preview="hat" class="bg" style="z-index: 13" />
+                        <img data-choose-preview="front-accessory" class="bg bg-contain" style="z-index: 14" />
+                     </div>
+                  </div>
+                  <div class="generator__btns">
+                     <button data-reset-btn>
+                        <span>RESET</span>
+                     </button>
+                     <button data-generate-random-btn>
+                        <span>RANDOM</span>
+                     </button>
+                     <button data-download-photo>
+                        <span>DOWNLOAD</span>
+                     </button>
+                  </div>
+               </div>
+               <div class="generator__items">
+                  <div class="generator__item" data-swiper-wrap>
+                     <label class="generator__item_title"> FACE </label>
+                     <div class="swiper__items-wrap">
+                        <button class="swiper__items_btn swiper__items-prev">
+                           <img src="./image/prev-icon.svg" alt="" />
+                        </button>
+                        <div class="swiper swiper__items" data-choose-items="face">
+                           <div class="swiper-wrapper">
+                              <div class="swiper-slide" data-def-item data-item="">
+                                 <img src="./image/not-image.svg" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/face-1.png">
+                                 <img src="./image/face-1.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/cap-3.png">
+                                 <img src="./image/cap-3.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/cap-4.png">
+                                 <img src="./image/cap-4.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/cap-5.png">
+                                 <img src="./image/cap-5.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/face-2.png">
+                                 <img src="./image/face-2.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/face-3.png">
+                                 <img src="./image/face-3.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/face-4.png">
+                                 <img src="./image/face-4.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/face-5.png">
+                                 <img src="./image/face-5.png" alt="" />
+                              </div>
+                              <div class="swiper-slide" data-item="./image/face-7.png">
+                                 <img src="./image/face-7.png" alt="" />
+                              </div>
+                           </div>
+                        </div>
+                        <button class="swiper__items_btn swiper__items-next">
+                           <img src="./image/next-icon.svg" alt="" />
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+      <script src="app.js"></script>
+   </body>
+</html>

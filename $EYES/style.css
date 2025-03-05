@@ -1,0 +1,494 @@
+@font-face {
+   font-family: "Cactus Jack";
+   src: url("./fonts/Cactus Jack.woff") format("woff"), url("./fonts/Cactus Jack.otf") format("opentype"),
+      url("./fonts/Cactus Jack.ttf") format("truetype");
+   font-weight: normal;
+   font-style: normal;
+}
+
+* {
+   font-family: "Cactus Jack", serif !important;
+   color: #fff;
+}
+
+._scale_hover {
+   transition: all 0.4s ease 0s;
+   cursor: pointer;
+}
+
+._scale_hover:hover {
+   transform: scale(1.1);
+}
+
+.networks {
+   display: flex;
+   align-items: center;
+   gap: 73px;
+}
+
+.networks a {
+   display: block;
+}
+
+.ca {
+   word-wrap: break-word;
+   word-break: break-all;
+   max-width: 100%;
+}
+
+._container {
+   max-width: 1600px;
+   padding: 0 20px;
+   margin: 0 auto;
+}
+
+.wrapper {
+   position: relative;
+   overflow: hidden;
+   min-height: 100%;
+   width: 100%;
+}
+
+.bg__wrap {
+   position: relative;
+}
+
+.bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+[data-copy] {
+   cursor: pointer;
+}
+
+.copied_modal {
+   position: fixed;
+   top: 50%;
+   color: #000;
+   left: 50%;
+   z-index: 100;
+   background: #fff;
+   font-family: "Knewave", system-ui;
+   padding: 10px 30px;
+   white-space: nowrap;
+   border-radius: 20px;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.4s ease 0s;
+   font-size: 32px;
+}
+
+.main {
+   margin-top: -100px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.copied_modal._show {
+   opacity: 1;
+   visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+}
+
+.networks__link {
+   align-self: start;
+   color: #fff;
+   -webkit-text-stroke-width: 2.25px;
+   -webkit-text-stroke-color: #fff;
+   font-family: "Cactus Jack";
+   font-size: 95.379px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -4.769px;
+   margin-bottom: 25px;
+}
+
+.ca {
+   color: #fff;
+   -webkit-text-stroke-width: 1.41px;
+   -webkit-text-stroke-color: #fff;
+   font-family: "Cactus Jack";
+   font-size: 59.555px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -2.978px;
+}
+
+.subtitle {
+   color: #fff;
+   text-align: center;
+   -webkit-text-stroke-width: 2.56px;
+   -webkit-text-stroke-color: #fff;
+   font-family: "Cactus Jack";
+   font-size: 108.522px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 1;
+   letter-spacing: -5.426px;
+}
+
+.header__right {
+   display: flex;
+   align-items: center;
+   gap: 24px;
+}
+
+.bottom__text {
+   color: #fff;
+   text-align: center;
+   -webkit-text-stroke-width: 2.27px;
+   -webkit-text-stroke-color: #fff;
+   font-family: "Cactus Jack";
+   font-size: 96.331px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -4.817px;
+}
+
+.generator__wrap {
+   border-radius: 51.469px;
+   border: 0.673px solid #fff;
+   background: #0b0a17;
+   padding: 13px 38px 31px 38px;
+   max-width: 380px;
+}
+
+.upload__btn,
+.download__btn {
+   border-radius: 25.773px;
+   border: 3.965px solid #b8040e;
+   background: #424d85;
+   display: flex;
+   padding: 0 15px;
+   padding-bottom: 15px;
+   justify-content: center;
+   align-items: center;
+   color: #fff;
+   -webkit-text-stroke-width: 1.71px;
+   -webkit-text-stroke-color: #fff;
+   font-family: "Cactus Jack";
+   font-size: 72.633px;
+   font-style: normal;
+   white-space: nowrap;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -3.632px;
+   margin-top: 20px;
+}
+
+.download__btn {
+   padding: 0 5px;
+   padding-bottom: 15px;
+}
+
+#uploadedImage {
+   height: 100%;
+   object-fit: cover;
+}
+
+.data-image-wrap {
+   width: max-content;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 296px;
+   max-width: 296px;
+   margin: 0 auto;
+   border-radius: 27px;
+   overflow: hidden;
+}
+
+.squirrel-2 {
+   width: 100%;
+   height: 100%;
+}
+
+.second {
+   padding-top: 50px;
+   background-color: #8b8b8b;
+   width: 100%;
+}
+
+@media (max-width: 1550px) {
+   .main {
+      margin-top: 0;
+   }
+}
+
+@media (max-width: 1000px) {
+   .title {
+      width: 90vw;
+   }
+}
+
+@media (max-width: 767px) {
+   .data-image-wrap {
+      height: 236px;
+      max-width: 236px;
+      border-radius: 10px;
+   }
+   .subtitle {
+      color: #fff;
+      text-align: center;
+      -webkit-text-stroke-width: 0.92px;
+      -webkit-text-stroke-color: #fff;
+      font-family: "Cactus Jack";
+      font-size: 39.101px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -1.955px;
+   }
+   .upload__btn img {
+      width: 16px;
+   }
+   .que__btn img {
+      width: 20px;
+   }
+   .header {
+      flex-direction: column;
+   }
+   .header__right {
+      margin-top: -25px;
+   }
+   .upload__btn,
+   .download__btn {
+      font-size: 60px;
+      -webkit-text-stroke-width: 0.8872135877609253px;
+      max-height: 70px;
+   }
+   .generator__wrap {
+      max-width: 310px;
+      padding: 13px;
+   }
+   .bottom__text {
+      font-size: 45px;
+   }
+   .generator__top {
+      max-width: 250px;
+   }
+}
+
+.none {
+   display: none;
+}
+
+.show-400 {
+   display: none;
+}
+
+@media (max-width: 400px) {
+   .show-400 {
+      display: flex;
+   }
+   .hide-400 {
+      display: none;
+   }
+   .networks {
+      gap: 30px;
+   }
+   .ca {
+      font-size: 40px;
+   }
+   .networks__link {
+      font-size: 55px;
+      letter-spacing: -1px;
+   }
+   .header__right {
+      margin-top: -10px;
+   }
+   .networks img {
+      width: 30px;
+   }
+   .main {
+      margin-top: 15px;
+   }
+}
+
+[data-anim-on-scroll] {
+   transition: all 0.4s ease 0s;
+   opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+   opacity: 1;
+}
+
+._right_anim_tr {
+   transform: translateX(200%);
+}
+
+._left_anim_tr {
+   transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+   transform: translateX(0%);
+}
+
+._bottom_anim_tr {
+   transform: translateY(200%);
+}
+
+._top_anim_tr {
+   transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+   transform: translateY(0%);
+}
+
+._scale_anim {
+   transform: scale(0);
+}
+
+._scale_anim._animate {
+   transform: scale(1);
+}
+
+.anim {
+   animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+
+   50% {
+      transform: scale(1.5);
+   }
+}
+
+/*.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+   transform: translateX(-200%);
+}
+
+.card-right {
+   transform: translateX(200%);
+}
+
+.card._animate {
+   transform: translateX(0%);
+}
+
+.card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq {
+   transform: scale(0);
+   opacity: 0;
+   visibility: hidden; 
+   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uniq:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq._animate {
+   transform: scale(1);
+   opacity: 1; 
+   visibility: visible;
+}*/

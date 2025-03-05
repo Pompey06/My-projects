@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>$EYES</title>
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/bg.png" alt="" class="bg hide-400" />
+         <img src="./image/bgmb.png" alt="" class="bg show-400" />
+         <div class="content _container">
+            <div class="header">
+               <div data-anim-on-scroll data-copy class="ca _left_anim_tr">CA: 00000000000000</div>
+               <div data-delay="0.3" data-anim-on-scroll class="header__right _right_anim_tr">
+                  <a href="#" class="_scale_hover networks__link"> Chart </a>
+                  <div class="networks">
+                     <a href="#" class="_scale_hover">
+                        <img src="./image/tg.svg" alt="" />
+                     </a>
+                     <a href="#" class="_scale_hover">
+                        <img src="./image/x.svg" alt="" />
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <section class="main">
+               <h2 data-anim-on-scroll data-delay="0.6" class="subtitle _left_anim_tr">United Eyes of ketamine</h2>
+               <img data-anim-on-scroll data-delay="0.9" src="./image/title.png" alt="" class="title _right_anim_tr" />
+               <div data-anim-on-scroll data-delay="1.2" class="generator__wrap _scale_anim">
+                  <img src="./image/generator__top.png" alt="" class="generator__top" />
+                  <div class="data-image-wrap" id="dataImageWrap">
+                     <img id="uploadedImage" src="./image/default.png" alt="Uploaded Image" />
+                     <div id="faceImage" style="display: none; position: absolute">
+                        <img class="squirrel-2" src="./image/eyes.png" alt="Face" />
+                        <div class="blur"></div>
+                     </div>
+                  </div>
+                  <button id="makeQuePro" class="que__btn none _scale_hover">make it CRASH</button>
+                  <button id="uploadPhoto" class="upload__btn _scale_hover">UPLOAD PHOTO</button>
+                  <button id="download" class="que__btn download__btn _scale_hover" style="display: none">
+                     download photo
+                  </button>
+               </div>
+               <input type="file" id="photoInput" accept="image/*" style="display: none" />
+               <div data-anim-on-scroll class="bottom__text _scale_anim">MAKE KETAMIN GREAT AGAIN</div>
+            </section>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+      <script src="./copy.js"></script>
+      <script src="./app.js"></script>
+      <script src="./animation.js"></script>
+   </body>
+</html>

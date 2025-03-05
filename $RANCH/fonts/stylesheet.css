@@ -1,0 +1,11 @@
+@font-face {
+    font-family: '';
+    src: url('Cunia.eot');
+    src: url('Cunia.eot?#iefix') format('embedded-opentype'),
+        url('Cunia.woff2') format('woff2'),
+        url('Cunia.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
